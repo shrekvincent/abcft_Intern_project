@@ -7,6 +7,7 @@ import BGPic from "./img/main-screen-bg.jpg"
 import './App.css';
 import './css/analystai.css';
 import './css/nav.css';
+// 我在测试
 
 class App extends Component {
   render() {
