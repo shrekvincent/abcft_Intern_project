@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/数据</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="86.1649204%" y1="8.66546044%" x2="12.8483435%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FF987B" offset="0%"></stop>
+            <stop stop-color="#FB3F5B" offset="37.4491641%"></stop>
+            <stop stop-color="#F52566" offset="100%"></stop>
+        </linearGradient>
+        <path d="M4,0 L26,0 C28.209139,-4.05812251e-16 30,1.790861 30,4 L30,20 C30,22.209139 28.209139,24 26,24 L4,24 C1.790861,24 2.705415e-16,22.209139 0,20 L0,4 C-2.705415e-16,1.790861 1.790861,4.05812251e-16 4,0 Z" id="path-2"></path>
+    </defs>
+    <g id="icon/数据" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Mask" fill="url(#linearGradient-1)" cx="32" cy="32" r="30"></circle>
+        <g id="图形" transform="translate(17.000000, 20.000000)">
+            <mask id="mask-3" fill="white">
+                <use xlink:href="#path-2"></use>
+            </mask>
+            <use id="Combined-Shape" fill="#F77C8B" xlink:href="#path-2"></use>
+            <rect id="Rectangle-2" fill-opacity="0.15" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-3)" x="0" y="8" width="31" height="8"></rect>
+            <g id="Group" mask="url(#mask-3)" fill-rule="nonzero">
+                <polygon id="Path-6" fill="#FFFFFF" points="0 22.0090866 8.57969598 12.7645623 15.8911183 14.6333944 31 0 31 29 0 29"></polygon>
+                <polygon id="Path-5" fill="#FFEEEE" points="0 24.5264202 8.02399389 17.4082236 15.2149635 19.4611001 30 9 30 27 0 27"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
