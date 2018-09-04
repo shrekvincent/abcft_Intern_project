@@ -1,0 +1,696 @@
+Head first recording :
+1.URL (Uniform Resource Locators):统一资源定位符。
+http也称为超文本传输协议（hypertext transfer protocol）
+2.要连接到页面中的一个特定目标，只需要在连接最后加一个#，再加上目标表示符
+<h2 id="chai">Chai Tea,$1.85</h2>
+ <a href="index.html#chai">See Chai Tea</a>
+3.target属性告诉浏览器在哪里打开href属性中链接指示的web页面。如果没有target，浏览器会在同一个窗口中打开这个链接，
+  如果目标为“_blank”，浏览器就会在一个新窗口中打开链接。
+4.文件传输协议《File Transfer Protocol》FTP是向服务器传输web页面和内容的常用方法。
+5.web上常用的图像格式有3中jpeg,png,gif
+
+ work:
+      1.还原https://v4.bootcss.com/docs/4.0/examples/album/#
+布局：
+  1.  只用定位和负值空白边让设计居中
+  2.  基于浮动的布局（最常用，只需要设置定位的元素的宽度，然后将他们向左或向右浮动）
+  3.  固定宽度、流体和弹性布局
+      在使用流体布局是，尺寸是用百分数而不是像素设置。
+  4.  css盒子模型:一个盒子中主要属性有5个，width,height,padding,border,margin.
+      width:内容的宽度；height:内容的高度;padding:内边距；margin:外边距。
+      padding-top/right/bottom/left,如果写了四个值对应上右下左
+      border有三个要素：像素，线型，颜色
+      < dl>< /dl>用来创建一个普通的列表,< dt>< /dt>用来创建列表中的上层项目，
+      < dd>< /dd>用来创建列表中最下层项目。
+      <dl> <dt> <dd>是一组合标签，使用了dt dd最
+      外层就必须使用dl包裹，此组合标签我们也又叫表格标签，与table表格类似组合标签，
+      故名我们也叫dl表格。
+      <ul>无序列表<li>表内元素
+      <ol>有序列表
+  5.   在CSS中关于定位的内容是：position:relative | absolute | static | fixed 
+work-one总结：
+    link,链接外部样式表，在head中
+    svg？？svg嵌入html的方法，联网；已有svg文件的嵌入方法
+    内联元素转换为块元素：display:bolck;
+    rem单位是根元素(html)的font-size
+   ！important确定最高优先级
+   flex-wrap:规定灵活的项目在必要的时候拆行或拆列
+
+
+
+JavaScript:
+    1.JavaScript中标识符必须以字母、下划线或美元开始。（可以使用非英语或数字符号来写标识符）
+    2.JavaScript中除了数字、字符串、布尔值、null和undefined之外的就是对象了。对象（object）是属性（property）的集合，每个属性都由“名/值对”构成。
+    3.JavaScript中的所有数字均用浮点数值表示
+    4.break语句跳出循环后，回继续执行该循环之后的代码，continue语句中断循环中的迭代，如果出现了指定的条件，然后继续循环中的下一个迭代。
+        continue语句只能用在循环中，break语句只能用在循环或switch中，通过标签引用，break语句可用于跳出任何JavaScript代码块。
+    5.JavaScript 能够改变页面中的所有 HTML 元素
+    JavaScript 能够改变页面中的所有 HTML 属性
+    JavaScript 能够改变页面中的所有 CSS 样式
+    JavaScript 能够对页面中的所有事件做出反应
+    6.绝不要使用在文档加载之后使用 document.write()。这会覆盖该文档
+      this的使用？？？
+    7.Dom节点
+      方法是能够在对象上执行的动作，方法只不过是附加在对象上的函数；
+    8.JavaScript是面向对象的语言，但JavaScript不使用类
+      JavaScript中的所有数字类型都存储为根为10的64位（8bit），浮点数。
+    9.正则表达式（RegExp）:当要检索某个文本时，可以使用一种模式来描述要检索的内容，RegExp
+      RegExp对象有3个方法：test(),exec(),compile()
+      test（）方法检索字符串中的指定值，返回值是true或false
+      exec()方法检索字符串中的指定值，返回值是被找到的值，如果没有发现匹配，则返回null
+      compile()方法用于改变RegExp,compile()既可以改变检索模式，也可以添加或删除第二个参数。
+    10.可在JavaScript中创建三种消息框：警告框、确认框、提示框。
+    11.JavaScript计时时间：通过JavaScript,我们能在一个设定的时间间隔之后来执行代码，而不是在函数被调用后立即执行，我们称之为计时事件。
+    setTimeout()未来的某时执行代码，clearTimeout()取消setTimeout()
+    12.cookie用来识别用户
+    13.JavaScript库:JQuesy,Prototype,Mootools
+       prototype是一种库，提供用于执行常见web任务的简单API(应用程序接口Application Programming Interface)
+       CDN（Content Delivery Network）是包含可分享代码库的服务器网络。
+HTML DOM:DOM（Document Object Model）文档对象模型的缩写，html dom 定义了所有html元素的对象和属性，以及访问他们的方法，换言之，html dom是关于
+         如何获取、修改、添加或删除html元素的标准。
+        节点、字段、事件、属性、文档
+JQuery库包含以下特性：
+    HTML元素选取，HTML元素操作，CSS操作，HTML事件函数，JavaScript特效和动画，HTML DOM 遍历和修改，AJAX,Utilities
+    基础语法:$(selector).action()
+    jQuery规范：把所有代码置于事件处理函数中，把所有事件处理函数置于文档就绪事件处理器中，把jQuery代码置于单独的.js文件中，如果存在名称冲突，
+                则重命名jQuery库 var jq=jQuery.noConflict()
+    animate()方法几乎可以操作所有CSS属性，不过必须使用驼峰命名法，paddingLeft而不是padding-left;同时，色彩动画并不包含在核心jQuery库中；
+    toggle对应show或者hide;
+    chaining允许我们在一条语句中允许多个jQuery方法（在相同的元素上）
+    回调函数有连个参数：被选元素列表中当前元素的下标，以及原始值。
+jQuery操作css,jQuery拥有若干进行css操作的方法：
+    addClass()向被选元素添加一个或多个类
+    removeClass()从被选元素删除一个或多个类
+    toggleClass()对被选元素进行添加/删除类的切换操作
+    css（）设置或返回样式属性
+    //alert()窗口化显示,返回一条消息并等待确认。
+    //confirm()显示一条消息，并等待回答。
+    //prompt()显示一个问题，并等待输入。
+
+jQuery AJAX(异步JavaScript和XML:Asynchronous JavaScript and XML)
+
+JSON:JavaScript对象表示法(JavaScript Object Notation)，它是存储和交换文本信息的语法，比xml更小、更快、更易解析。
+     position:relative 属性可向对于一个元素的当前位置来定位此元素。
+     position:absolute 属性根据距离窗口的 margin 来定位一个元素。
+     z-index 属性用于把一个元素放置于另一个元素之后。z-index 的默认值是 0。值越高，其优先权也越高。z-index: -1 更低的优先权，优先权高的
+     在上面显示。
+DHTML:(dynamic html)仅仅是一个术语，描述了HTML、JavaScript、DOM以及CSS的技术组合。
+    XML是JavaScript对象
+WML:指无线标记语言，它是一种从HTML继承而来的标记语言，但是WML基于XML因此它较 HTML 更严格。
+
+Carousel_demo:
+    display:block-不设置宽高时，宽度为父元素宽度；独占一行
+            inline-内容撑开宽度，非独占一行，代码换行被解析成空格
+            no-隐藏元素并脱离文档流
+JavaScript语言精粹：
+    对象字面量，一种相对简单的给对象赋值的方式；
+    当一个函数被保存为对象的一个属性时，称它为一个方法；
+    函数可以访问它被创建时所处的上下文环境，这被称为闭包；
+
+jQuery实战：
+    经常作为jQuery命令引用的许多这类方法的显著特征是，当完成了一个操作时，它们返回相同的一组元素，提供给下一个操作，
+    例如，假定除了让元素呈现淡出效果之外，还想添加新的CSS类removed到每个元素，编写如下代码;
+    $("div.notLongForThisWorld").fadeOut().addClass("removed");
+    脱字符号^用于表示匹配出现在某个值的开头。a=[hrf^=http://]
+    特性值以...结尾的选择器。a=[href$=.pdf]
+    用来找到特性值的任何部位中包含某个字符串的元素:a[href*=jquery.com],该选择器匹配引用jQuery网站的所有<a>元素。
+    li:has(a) 匹配包含<a>元素的所有<li>元素
+    attr(name):获取指派到包装集里第一个元素制定特性的值，参数(name),特性的名称，该特性的值将被获取。
+    each(iterator):遍历包装集里的所有元素，为各元素分别调用传递进来的迭代器函数;
+    attr(name,value):为包装集里所有元素的name特性设置传递进来的值
+    $.fn是指jquery的命名空间，加上fn上的方法及属性，回对jQuery实例每一个有效。如扩展$.fn.abc(),即$.fn.abc()是对jquery扩展了
+    一个abc方法，后面每一个jQuery实例都可以引用这个方法
+    1.jQuery为开发插件提拱了两个方法，分别是： 
+    jQuery.extend(object);为扩展jQuery类本身.为类添加新的方法。 
+    jQuery.fn.extend(object);给jQuery对象添加方法。
+    2.this关键字是对定义方法的对象的引用
+    5大浏览器的内核：IE:Trident,
+                    Opera:Presto-->Webkit-->Blink
+                    Safari:Webkit,
+                    Firefox:Gecko,
+                    Chrome:chromium-->Blink
+    单线程，多线程：单线程的也就是程序执行时，所跑的程序路径（处理的东西）是连续顺序下来的，必须前面的处理好，后面的才会执行到；
+                  多线程嘛，举个例子也就是说程序可以同时执行2个以上相同类似的操作；
+    什么情况下用多线程？大多情况下，要用到多线程的主要是需要处理大量的IO操作时或处理的情况需要花大量的时间等等，
+                    比如：读写文件、视频图像的采集、处理、显示、保存等。
+    并行和并发：并行，是指两个或者多个事件在同一时刻发生；并发，是指两个或多个事件在同一时间间隔内发生，在操作系统中，
+            并发是指有几个程序都处于启动运行和运行完毕之间，而且几个程序都是在同一CPU上，但是任意时刻点只有一个程序在CPU上运行。 
+    为什么javaScript是单线程？JavaScript的单线程，与它的用途有关。作为浏览器脚本语言，JavaScript的主要用途是与用户互动，以及操作DOM。
+                这决定了它只能是单线程，否则会带来很复杂的同步问题。比如，假定JavaScript同时有两个线程，一个线程在某个DOM节点上添加内容，
+                另一个线程删除了这个节点，这时浏览器应该以哪个线程为准？
+    ---->为了解决cpu闲置问题，有了同步(synchronous)和异步(asynchronous)的概念：同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，
+            才能执行后一个任务；异步任务指的是，不进入主线程、而进入”任务队列”（task queue）的任务，只有”任务队列”通知主线程，某个异步任务可以执行了，
+            该任务才会进入主线程执行。
+    
+    反射:检查对象有什么属性
+        typeof flight.number //'number'
+        typeof flight.status //'string'
+        typeof flight.arrival //'object'
+        typeof flight.manifest //'undefined'
+    闭包(closure):闭包就是能够读取其他函数内部变量的函数，由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，
+                    因此可以把闭包简单理解成“定义在一个函数内部的函数，所以，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。
+    使用闭包的注意点：1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。
+                    解决方法是，在退出函数之前，将不使用的局部变量全部删除。
+                    JavaScript中所有的function都是一个闭包。
+    Flex是Flexible Box的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。
+
+
+    CSS3:
+        transition:搭配hover给动态值 加时间，调用方式 transition:width 2s;
+        ::before ::after伪元素，这些添加不会出现在DOM中，不会改变文档内容，不可复制，
+        仅仅是在css渲染层加入。
+        
+        word-break:norml||break-all||keep-all,
+                使用浏览器默认的换行规则，允许在单词内换行，只能在半角空格或连字符处换行
+        dl dt dd 
+        display:table-->此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符
+        content:
+        clear:both禁止左右两侧出现浮动元素,当前元素将排斥浮动元素独占一行呈现.
+        clear:left; 禁止左侧出现浮动元素,如果左侧存在浮动元素,则当前元素将在浮动元素下面另起一行呈现.
+        clear:right; 禁止右侧出现浮动元素,如果右侧存在浮动元素,则右侧的浮动元素将在当前元素下面另起一行呈现.
+        text-overflow:clip|ellipsis|string
+                    修剪文本 显示省略号 使用给定的字符串代表被修剪的文本
+        white-space:normal|pre|nowrap|pre-wrap|pre-line|inherit
+                    normal:默认。空白会被浏览器忽略。
+                    pre:空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签
+                    nowrap:文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+                    pre-wrap:保留空白符序列，但是正常地进行换行。
+                    pre-line:合并空白符序列，但是保留换行符。
+                    inherit:规定应该从父元素继承 white-space 属性的值。
+        flex:
+        *当图片尺寸小于屏幕分辨本生大小的时候，造成的背景图片不能铺满整个屏幕
+        使用background-size:cover;因此,当背景图片不能铺满整个屏幕的时候不一定
+        是未进行overflow:hidden;操作
+        背景图片不能加进来的原因，相对路径错了。特别实在css文件中引用的路径
+        flex有6个属性:*flex-direction :决定主轴的方向（即项目的排列方向）
+                                     row|row-reverse|column|column-reverse
+                                     左到右|右到左|上到下|下到上
+                     flex-wrap:属性定义，如果一条轴线排不下，如何换行。
+                                nowrap|wrap|wrap-reverse
+                                不换行|换行，第一行在上方|换行，第一行在下方
+                     flex-flow:它是flex-direction和flex-wrap的合写形式，默认值为 row nowrap
+                                <flex-directioni>||<flex-wrap>
+                     *justify-content:定义了项目在主轴的对齐方式
+                                    flex-start|flex-end|center|space-between|space-around
+                                    左对齐|右对齐|居中|两端对齐，项目之间间隔相等|每个项目两侧的间隔相等，项目之间的间隔比项目与边框的间隔大一倍
+
+
+                     *align-items：定义项目在交叉轴上如何对齐
+                                flex-start|flex-end|center|baseline|stretch
+                                交叉轴的起点对齐|交叉轴的终点对齐|交叉轴的中点对齐|项目的第一行文字的基线对齐
+                                stretch-->默认值，如果项目未设置高度或设为atuo,将沾满整个容器的高度
+
+                     align-content
+        counter-reset：属性创建或重置一个或多个计数器，通常和counter-increment属性，content属性一起使用。
+                        http://www.runoob.com/cssref/pr-gen-counter-reset.html
+        为元素：:after :before的用法：https://blog.csdn.net/qq_30486009/article/details/51500390
+                伪元素的特有属性content可以包含文字，图片，调用属性，调用计数器等。
+        *容器宽高都为100%,即使设置了容器box-sizing:border-box内容也溢出了，由于图片未经尺寸加工，保留
+        的原来尺寸（未在img中规定尺寸大小），溢出的内容是图片的。 
+
+        *input搜索框设置参见项目设计：analystai.alim,input中在padding中填充的图片，前提是class容器制定box-sizing:boder-box;
+                                    从而可以将背景图片放在padding中并移动位置。
+        href="/"表示链接到网站根目录
+
+        jQuery库的引用一般是直接下载min版本的，或者通过微软3.0版本链接，而不是google(不挂vpn没权限访问)
+        
+        html中 div、section、article的区别：语义从无到有，逐渐增强div 无任何语义，仅仅用作样式化或者脚本化；对于一段主题性的内容，
+              则就适用 section；假如一段主题性内容脱离上下文后仍是完整且独立存在的一段内容，则就适用 article
+        nav导航标签，语义化
+        target属性：
+            _blank:表示在新窗口打开被链接的文档；
+            _self:表示在相同的框架中打开被链接的文档；（默认值）
+            _parent:表示在父框架打开被链接的文档；
+        https://blog.csdn.net/lurenxie/article/details/80241331
+
+    弹出层设计
+        1.在li下面设计弹出层，显示格式未消除完。在导航栏中插入的弹出层不能以block的形式显示
+          由于导航栏的定义的边框带有长宽；
+        2.用相应函数调控
+    href="javascirpt:void(0)"与href="#"的区别
+    javasrcipt:void(0)仅仅表示一个死链接，"#"包含了位置信息，例如默认的锚点是#top也就是网页的上端
+    例如：<a href="javasrcipt:void(0)" onClick="window.open()">点击链接后，页面不动，只打开链接
+
+Ajax:Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）
+    xmlhttp.open('GET','ajax_text.asp',true):该文件可以是任何类型的文件，比如.txt和.xml，
+           或者服务器脚本文件，比如.asp和.php（在传回响应之前，能够在服务器上执行任务）；
+           **异步true或false
+           XMLHttpRequest对象如果要用于AJAx的话，其open()方法的async参数必须设置为true;
+           当使用async =true时，请规定在响应处于onreadystatechange事件中的就绪状态时执行的函数；
+           xmlhttp.onreadystatechange=function()
+           {
+               if (xmlhttp.readyState==4 && xmlhttp.status==200)
+               {
+                   document.getElementById('myDiv').innerHTML = xmlhttp.responseText;
+               }
+           }
+           xmlhttp.open('GET','test1.txt','true');
+           xmlhttp.send()
+    readyState存有XMLHttpRequest的状态，从0到4发生变化
+            0:请求未初始化
+            1：服务器连接已建立
+            2：请求已接收
+            3：请求处理中
+            4：请求已完成，且响应已就绪
+    status:200：‘ok’
+            404:not found
+            
+    ajax 创建XMLHttpRequest 对象  参考： http://www.runoob.com/ajax/ajax-xmlhttprequest-send.html
+JSON:JavaScript Object Notation 一种数据交互格式
+    注意事项：JSON 规定字符集是UTF-8，字符串必须使用""，Object 的键也必须使用""；数组或对象的最后一个成员，不能加 逗号
+    JSON语法是Javascript对象表示法语法的子集：
+        1.数据在民称/值对中
+        2.数据由逗号分隔
+        3.花括号保存对象
+        4.方括号保存数组
+    JSON值可以是:
+        1.数字（正数或浮点数）
+        2.字符串（在双引号中）
+        3.逻辑值(true或false)
+        4.数组(在方括号中)
+        5.对象（在花括号中）
+        6.null
+
+XML：...
+Hightcharts：
+        *js (document).ready() ？？预备函数加载文档的作用。。
+        Hightcharts的基本组件：
+            1.标题（title）：包含副标题（subtitle）
+            2.坐标轴(axis): xAxis yAxis
+            3.数据列（serise）:数据列即图标上一个或多个数据系列
+            4.数据提示框(tooltip):当鼠标悬停在某点上时，以框的形式提示该点的数据，比如该点的值、数据单位等
+            5.图例（legend）：图例是图表中用不同形状、颜色、文字等 标示不同数据列，通过点击标示可以显示或隐藏该数据列。
+            6.版权标签(credits)：显示在图表右下方的包含链接的文字，默认是Highcharts官网地址。通过指定credits.enabled=false即可不显示该信息
+            7.导出功能（exporting）：通过引入 exporting.js即可增加图表导出为常见文件功能。
+            8.标示线（plotlines）：可以在图表上增加一条标示线，比如平均值线，最高值线等。
+            9.标示区（plotbands）：可以在图表添加不同颜色的区域带，标示出明显的范围区域。
+        如何设置highchart内部组件样式？
+            例：1.删除官网标志
+                    credits: {
+                            enabled: false
+                    }
+                2.给整个表格设置背景色
+                    chart: {
+                        backgroundColor: "#f4f5f7",  //设置背景色
+                        type: 'spline'
+                    }
+        box-shadow:X轴偏移量 Y轴偏移量阴影模糊半径 阴影扩展半径 阴影颜色;
+        **原生js实现下拉加载功能:实现的原理是通过获取①获取滚动条当前的位置②获取当
+                                前可视范围的高度 ③获取文档完整的高度
+            1.获取滚动条当前的位置
+            function getScrollTop() {
+                var scrollTop = 0;
+                if(document.documentElement && document.documentElement.scrollTop){
+                    scrollTop=document.documentElement.scrollTop;
+                }else if(document.body){
+                    scrollTop = document.body.scrollTop;
+                }
+                return scrollTop;
+            }
+            2.获取当前可视范围的高度
+            function getClientHeight() {
+                var clientHeight = 0;
+                if(document.body.clientHeight && document.documentElement.clientHeight){
+                    clientHeight = Math.max(document.body.clientHeight,document.documentElement.clientHeight);
+                }
+                return clientHeight;   
+            }
+            3.获取文档完整的高度
+            function getScroolHeight() {
+                return Math.max(document.body.scroolHeight,document.documentElement.scrollHeight);
+            }
+            4.实现下拉刷新
+            //滚动事件触发
+            window.onscroll = function(){
+                if(getScrollTop()+getClientHeight()==getScrollHeight()){
+                    console.log('下拉刷新了')
+                    //此处发起AJAX请求
+                }
+            }
+            5.获取页面元素的位置
+            var wrapTop = document.getElementById('scrollWrap')
+            console.log(wrapTop.scrollTop+" "+"滚动条当前的位置")
+            console.log(wrapTop.scrollHeight+" "+"获取滚动条的高度")
+        **同一Highchart绘图函数，只能识别相同id的第一个，除非动态生成，
+          ajax读取JSON文件需配置服务器;
+        **js中的增删查改：
+                    查：document.getElementByTagName('button');
+                        document.getElementByClassName('content');
+                        document.getElementById('list-item');
+                    增：document.createElementByTagName('button');
+                        document.createElementByClassName('content');
+                        document.createElementById('list-item');
+        **DOM相关操作:
+                    文本操作:insertData(offset,String)
+                            appendData(string)
+                            deleteData(offset,count)
+                            replaceData(off,count,string)
+                            splitData(offset)
+                            substring(offset,count)
+                    属性：  nodeName
+                            nodeValue
+                            nodeType
+                    属性操作：
+                            getAttribute 
+                            setAttribute
+                            removeAttribute
+                    继承：
+                           node
+                           createElementByClassName
+                           HTMLElement
+                           HTMLAnchorElement
+                    获取节点：
+                            document . getElementByName
+                                       getElementById
+                                       getElementByTagName
+                            节点指针：
+                                        firstChild
+                                        lastChild
+                                        childNodes
+                                        parentNode
+                                        previousSibling
+                                        nextSibling
+                    节点操作： 
+                            创建节点：
+                                    createElement
+                                    createAttribute
+                                    createTextNode
+                            插入节点：appendChild
+                                     insertBefore
+                            替换节点：replaceChild
+                            复制节点：cloneNode
+                            删除节点：removeChild
+            **document.querySelect("#demo") |document.querySelect(css selectors)
+              该方法仅返回匹配指定选择器的第一个元素，如果需要返回所有的元素，请使用querySelectAll()替代
+            **如何在Js遍历中动态增加ID，获取动态的id？？
+              在遍历中动态添加ID:"<ul id=\'ul"+i+"\'>"
+              获取动态的ID：$("#ul"+i).append(cost_list);
+            **字符串的拼接？？
+              错误范例：如果直接用单引号引起来则表示字符串
+                        $(".data-list-box").append('<div id=  'chartId'></div>')
+
+              正确范例：前面连个单引号一段中间一段后面单引号一段
+                        $(".data-list-box").append('<div id="' + chartId + '"></div>')
+            **消除所有演示表自适应margin,padding值，包括对body的设置；
+              *{margin:0;padding:0;}
+              导航栏边界未贴住浏览器边界设置body overflow属性为hidden; 
+              对于导航栏的处理可已设置top:0;bottom:0;
+              参考链接：https://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html
+              参考例子：AnalystaiGroups
+            **jquery删除、清空<div>之间的内容---empty()与remove()区别:
+                empty()只是移除了指定元素中的所有节点，而子标签任留在dom中占有位置；
+                remove()则是把其从dom中删除，而不会保留其所占的位置。
+            **zepto.js是一个轻量级的js库，它与jQuery有类似的api.
+                浏览器兼容：zepto偏移动端，jQuery偏PC端；
+                文件大小：zepto 10k jQuery 30k;
+                部分API接口：参数和执行结果有可能不一致；
+                生态圈：jQuery更好；
+                核心库:zepto核心库的性能要比jQuery优秀;
+            设置延时setTimeOut()   loadMore()??
+            **document.body.clientHeight 和 document.documentElement.clientHeight的区别？
+                        body对象高度                            可见区高度
+            chrome中：
+                document.documentElement.scrollHeight  浏览器所有内容高度，
+                document.documentElement.scrollTop 始终为0，
+                document.documentElement.clientHeight  浏览器可视部分高度，
+                document.body.scrollHeight  浏览器所有内容高度  
+                document.body.scrollTop  浏览器滚动部分高度  
+                document.body.clientHeight  浏览器所有内容高度
+            **css 解决表格超出部分用省略号显示
+2018/8/17 第5周
+            清除元素下的内容：$0.innerHTML = "";
+                            $($0).empty();
+            定时器：setTimeout() 方法用于在指定的毫秒数后调用函数或计算表达式。
+                    setTimeout() 只执行 code 一次。如果要多次调用，请使用 setInterval() 
+                    或者让 code 自身再次调用 setTimeout()。
+                    如果把setTimeout()定时器放到函数里面则实现了定时循环执行函数。
+                    js引擎是单线程执行的，但是浏览器是多线程的；
+                    对定时器（线程理解）参考文档： https://www.cnblogs.com/yelongsan/p/6296700.html
+            **纠正下拉刷新的逻辑问题
+            在window.onscroll()函数中div1.parentNode.insertBefore(div2,div1.nextSibling);
+            错误提示：Cannot read property 'insertBefore' of undefined
+             at window.onscroll chrome的同源策略：这是因为Chrome为了安全起见对window
+             .open打开页面的脚本访问做了安全限制，如果window.open打开的子页面与它
+             的父页面（即打开它的那个页面）不在同一个域，则子页面不能访问它的父页面的元素以及脚本。
+             **for in sytnax:for(var key in object){}语句可以用来列举出一个变量的所有成员。如果object是函数(或类即构造函数)，那么将列
+             出函数的所有静态成员；如果object是对象，那就是所有实例成员，key的类型是一个字符串，表示成员的名称。
+             for(var key in data){}
+             **table 本身不能产生ellipsis的效果 只是隐藏超出部分
+             overflow:visible默认值,内容不会被修剪，回呈现在元素框之外。
+                      hidden 内容会被修剪，并且其余内容不可见
+                      scroll内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容
+                      auto如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容
+                      inherit规定从父元素继承overflow属性的值;
+            **问题:js动态生成的元素，绑事件绑不上？？在调用事件函数的时候该元素还没生成。。jquery???函数
+              解释：.click只能为页面现有的元素绑定点击事件，如果是动态生成的新的元素，是没有事件的；
+                    $(document).on("click","指定的元素",function(){});方法则是将指定的事件绑定在document上，
+                    而新产生的元素如果符合指定的元素，那就触发此事件；
+            *table:
+                    table-layout:该属性制定了完成表布局时所用的布局算法，
+                                fixed|automatic|inherit|
+                                fixed:列宽由表格宽度和列宽度设定；
+                                automatic:默认，列宽度由单元格内容设定；
+                                inherit:规定从父元素继承table-layout属性的值
+                    border-collapse：separate | collapse
+                                separate:边框独立
+                                collapse:相邻边被合并
+                                只有当表格边框独立（即 <' border-collapse '> 属性等于separate时）， 
+                                <' border-spacing '> 和 <' empty-cells '> 才起作用
+            *滚动条的设置： 7大部件或组成部分：
+                          ::-webkit-scrollbar   滚动条整体部分           { /* 1 */ }
+                          ::-webkit-scrollbar-button       滚动条的轨道的两端按钮，允许通过点击微调小方块的位置{ /* 2 */ }
+                          ::-webkit-scrollbar-track     滚动条的轨道   { /* 3 */ }
+                          ::-webkit-scrollbar-track-piece  内层轨道，滚动条中间部分{ /* 4 */ }
+                          ::-webkit-scrollbar-thumb        滚动条里面的小方块，能向上向下移动{ /* 5 */ }
+                          ::-webkit-scrollbar-corner      边角，即两个滚动条的交汇处{ /* 6 */ }
+                          ::-webkit-resizer         两个滚动条的交汇处上用于通过拖动调整元素大小的小控件       { /* 7 */ }
+                          示意图参考：https://css-tricks.com/custom-scrollbars-in-webkit/
+                          例子：
+                            /*滚动条宽度*/  
+                            ::-webkit-scrollbar {  
+                                width: 8px;  
+                            }  
+                            
+                            /* 轨道样式 */  
+                            ::-webkit-scrollbar-track {  
+                            
+                            }  
+                            
+                            /* Handle样式 */  
+                            ::-webkit-scrollbar-thumb {  
+                                border-radius: 10px;  
+                                background: rgba(0,0,0,0.2);   
+                            }  
+                            
+                            /*当前窗口未激活的情况下*/  
+                            ::-webkit-scrollbar-thumb:window-inactive {  
+                                background: rgba(0,0,0,0.1);   
+                            }  
+                            
+                            /*hover到滚动条上*/  
+                            ::-webkit-scrollbar-thumb:vertical:hover{  
+                                background-color: rgba(0,0,0,0.3);  
+                            }  
+                            /*滚动条按下*/  
+                            ::-webkit-scrollbar-thumb:vertical:active{  
+                                background-color: rgba(0,0,0,0.7);  
+                            } 
+            Error.name的六种值对应的信息：
+                1.EvalError:eval()的使用与定义不一致
+                2.RangeErro:数值越界
+                3.ReferenceError:非法或不能识别的引用数值
+                4.SyntaxError:发生语法解析错误
+                5.TypeError:操作数类型错误
+                6.URIError:URI处理函数使用不当
+            表单演示例子：
+                <form method="get" action="">
+                    <p>
+                        username:<input type="text" name="username" value="请输入用户名" 
+                        onfocus="if(this.value=='请输入用户名'){this.value='';}}" onblur="if(this.value==''){this.value='请输入用户名'}">
+                    </p>
+                    <p>
+                        password:<input type="password" name="username">
+                    </p>
+                    <input type="submit">
+            **shell 内核：
+                    IE                  trident
+                    Firefox             Gecko
+                    Google chrome       Webkit/blink
+                    Safari              Webkit
+                    Opera               Presto
+            *js设置属性操作：
+                    var div = document.createElement('div');
+                    var p = document.createElement('p');
+                    div.setAttribute('class','example');
+                    p.setAttribute('class','slogan');
+                    var text = document.createTextNode('最帅！');
+                    p.appendChild(text);
+                    div.appendChild(p);
+                    document.body.appendChild(div);
+                    div.innerHTML = "";
+            *用js封装一个函数获取事件对象（e）,以解决IE（10）浏览器的兼容问题
+                    var ul = document.getElementsByTagName('ul')[0];
+                    ul.onclick = function (e) {
+                        var event = e || window.event;
+                        //获取事件源对象 （火狐||ie）的兼容性
+                        var target = event.target || event.srcElement;
+                        console.log(target.innerText);
+                    }
+            *用js封装一个鼠标拖拽事件
+                    function drag(elem) {
+                        // var div = document.getElementsByTagName('div')[0];
+                        var disX,
+                            disY,
+                        elem.onmousedown = function(e) {
+                            disX = e.pageX - parseInt(elem.style.left);
+                            disY = e.pageY - parseInt(elem.style.top);
+                            document.onmousemove = function(e) {
+                                var event = e||window.event;
+                                elem.style.left = e.pageX - disX + "PX";
+                                elem.style.top = e.pageY - disY + "PX";
+                            }
+                            document.onmouseup = function() {
+                                elem.onmousemove = null;
+                            }
+                        }
+                    }
+            DevTools控制台支持一些变量和函数来选择DOM元素：
+                $()–document.querySelector()的简写，返回第一个和css选择器匹配的元素。
+                例如$(‘div’)返回这个页面中第一个div元素
+                $$()–document.querySelectorAll()的简写，返回一个和css选择器匹配的元
+                素数组。
+                $0-$4–依次返回五个最近你在元素面板选择过的DOM元素的历史记录，
+                $0是最新的记录，以此类推。
+ECMAScript 6
+            1.let相较与var 生命变量 具有更清晰的作用域，相当于局部生命变量，只在let命令声明的代码块内有效。
+            2.暂时性死区：ES6明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量
+              从一开始就形成了封闭作用域，凡是在声明之前就使用这些变量，就会报错。
+            3.块级作用域的出现，是的广泛应用的立即执行函数表达式（IIFE）不再必要了。
+                IIFE写法
+                (function(){
+                    var tem = ...;
+                    ...
+                }());
+            4.const 声明一个只读的常量，一旦声明，常量的值就不能改变。
+              const 的作用域与let命令形同，只在声明所在的块级作用域有效。const的作用域与let
+              命令相同：只在声明所在的块级作用域内有效。
+            5.ES5只有两种声明变量的方法：var命令和function命令，es6除了添加let和const
+             命令，还有两种声明变量的方法：import命令和class命令，所以，es6一共有6种声明变量
+             的方法。
+             6.ES6引入了一种新的原始数据类型symbol,表示独一无二的值。它是JavaScript语言的第七种数据类型，前六种是
+             ：undefined、null、布尔值、字符串、数值、对象。
+             7.ES6提供了新的数据结构Set,它类似于数组，但是成员的值都是唯一的，没有重复值。
+             8.箭头函数取代Function.prototype.bind ，不再使用self/_this/that绑定this.
+             9.
+
+npm学习：由三部分组成：网站、注册表（registry）、命令行工具（CLI）
+        网站是开发者查找包，设置参数以及管理npm使用体验的主要途径；
+        注册表是一个巨大的数据库，保存了每个包的信息；
+        cli通过命令行或中断运行，开发者通过cli与npm打交道。
+设计模式：
+        Gang of Four 他们提出的设计模式主要是基于以下的面向对象设计原则
+        *对接口变成而不是对实现编程、
+        *有限使用对象组合而不是继承
+
+React学习：
+        MVC(Model-View-Controller)最常见的软件构架之一，mvc模式的意思是，软件可以分成3个部分，view用户界面，Controller业务逻辑,Model数据保存
+        MVP模式将Controller改名为presenter,同时改变了通信方向；
+        MVVM模式将presenter改名为ViewModel,基本上与MVP模式完全一致，唯一的区别是，它采用双向绑定：view的变动，自动反映在viewmodel,angular和ember都
+            采用这种模式；
+        Mocha 的作用是运行测试脚本，可以为JavaScript引用添加测试，从而保证代码的质量。
+        **React独有的JSX语法根JavaScript不兼容，凡是使用JSX的地方，都要加上type='text/babel'
+        组件并不是真实的dom节点，而是存在于内存之中的一种数据结构，叫做虚拟dom（virtual dom），只有当它插入文档后，才会变成真实的DOM
+        react实例一般引入三个库：react.min.js react的核心库；react.dom.js提供与DOM相关的功能；browser.min,js用于将jsx语法转换为javascript语法
+        ReactDOM.render是React的最基本的方法，用于将模板转换为HTML语言，并插入指定的DOM节点。
+        JSX的基本语法规则：遇到HTML标签以（以<开头）,就用HTML规则解析，遇到代码块（以{开头），就用JavaScript规则解析。
+        React允许将代码封装成组件（component），然后像插入普通HTML标签一样，在网页中插入这个组价，React.createClass方法用于生成一个组件类
+        例如：var HelloMessage = React.createClass({
+                render: function() {
+                    return <h1>Hello {this.props.name}</h1>;
+                }
+                });
+                
+                ReactDOM.render(
+                <HelloMessage name="John" />,
+                document.getElementById('example')
+                );
+        this.props对应的属性与组件的....
+        注意：组件类的第一个字母必须大写，否则会报错，比如HelloMessage不能写成helloMessage,
+             另外，组件类之只能包含一个顶层标签，否则也会报错。
+             添加组件属性，有一个地方需要主语就是class属性需要写成className,for属性需要写成
+             htmlFor,这是因为class和for是JavaScript的保留字。
+             this.props对象的属性与组件的属性一一对应，但是有一个例外，就是this.props.children属性，它表示
+             组件的所有子节点。
+             React提供一个工具方法React.Children来处理 this.props.children，我们可以用Reat.Children.map来
+             遍历子节点，而不用担心this.props.children的数据类型是undefine还是object.
+             组件类的PropTypes属性，就是用来验证组件实例的属性是否符合要求。此外，getDefaultProps
+             方法可以用来设置组件属性的默认值。
+             React组件支持很多事件，除了click事件以外，还有KeyDown、Copy、Scroll等；
+             *this.props表示那些一旦定义，就不再改变的特性，而this.state是会随着
+             用户互动而产生变化的特性。
+             **表单：用户在表单填入的内容，属于用户跟组件的互动，所以不能用this.props读取
+             **组件的生命周期分成三个状态：
+                    Mounting:已插入真实DOM
+                    updating:正在被重新渲染
+                    Unmounting:已移出真实DOM
+            *React为每个转台都提供了两种处理函数，will函数在进入状态之前调用，did函数在进入状态之后调用，
+            三种状态共计五种处理函数。
+            componentWillMount()
+            componentDidMount()
+            componentWillUpdate(object nextProps,object nextState)
+            componentDidUpdate(object prevProps,object prevState)    
+            componentWillUnmount()
+            **组件的数据来源，通常是通过Ajax请求从服务获取，可以使用componentDidMount方法
+            设置Ajax请求，等到请求成功，再用this.setState方法重新渲染UI
+        在jsx中不能使用if else语句，但可以使用condition(三元运算)表达式来替代；
+        React的注释需要写在花括号中，{/* 注释 */}
+        JSX允许在模板中插入数组，数组会自动展开所有成员；
+        React可以渲染HTML标签(strings)或React组件（classes）,要渲染html标签只需要jsx里面使用小写字母的标签名。
+        封装组件的例子：
+                function HelloMessage(props) {
+                    return <h1>Hello World!</h1>;
+                }
+                这一部分也可以使用es6 class来定义一个组件
+                class Welcome extends React.Component {
+                    render() {
+                        return <h1>Hello World!</h1>
+                    }
+                }
+
+                const element = <HelloMessage />;
+                
+                ReactDOM.render(
+                    element,
+                    document.getElementById('example')
+                );
+        *复合组件：
+             可以通过创建多个组件来合成一个组件，即把组件的不同功能点进行分离；
+        *React把组件看成一个状态机（state machines），通过与用户的交互，实现不同状态，然后渲染ui，让用户界面和数据保持一致
+         React里，只需要更新组件的state，然后根据新的state重新渲染用户界面（不需要操作dom）
+        *React元素的事件处理和DOM类似，但是语法有点不同：
+            React事件绑定属性的名字采用驼峰式写法，而不是小写。
+            如果采用JSX的语法，需要传入一个函数作为事件处理函数，而不是一个字符串
+            HTML写法：<button onclick="activateLasers()">激活按钮</button>
+            React中写法：
+            <button onClick={activateLasers}>激活按钮</button>
+        绑定回调函数的一般做法：this.handleClick = this.handleClick.bind(this);
+        *es6箭头函数特征：由函数参数、箭头、函数体组成
+            不能通过new关键字调用
+            没有原型，不能通过new调用
+            没有this,super,arguments和new.target绑定，new.target和super关键字是es6新增的
+            箭头函数中的this取决于他的上层非箭头函数的this指向
+            没有arguments对象，但是可以获取到外层函数的arguments
+            call,apply,bind不能改变箭头函数的this指向
+        *map()的实例是{key:value}结构，但不同于object.
+            map结构的实例有以下属性和操作方法
+            （1）size属性;(2)set(key,value);(3)get(key);(4)has(key);(5)delete(key);(6)clear()
+
+**2018/9/3
+        *在js中event.stopPropagation()可以阻止冒泡事件;在React中要组织冒泡，特别是原生document上绑的事件和react组件上
+        绑的事件时，要阻止冒泡就得用event.nativeEvent.stopImmediatePropagation();
+  **JS复习要点：
+        1.正则表达式
+        2.HTTP2协议
+        3.布局
+        4.Array（）对象常用方法
+        5.设计一个函数，使其存入一个数组，在函数内部执行先后执行数组的函数（异步的），并把结果返回控制台

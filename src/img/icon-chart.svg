@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="85.565193%" y1="19.0957794%" x2="12.161647%" y2="84.5833442%" id="linearGradient-1">
+            <stop stop-color="#499FED" offset="0%"></stop>
+            <stop stop-color="#0D54ED" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/数据图" transform="translate(-2.000000, -2.000000)">
+            <g id="Group" transform="translate(2.000000, 2.000000)">
+                <circle id="Mask" fill="url(#linearGradient-1)" cx="30" cy="30" r="30"></circle>
+                <polygon id="Shape" fill="#FFFFFF" fill-rule="nonzero" points="40.5257611 36.9148604 40.5257611 26.8225677 34.8285424 26.8225677 34.8285424 36.9148604 33.0484971 36.9148604 33.0484971 16 27.3539632 16 27.3539632 36.9148604 25.573918 36.9148604 25.573918 21.3106026 19.8766993 21.3106026 19.8766993 36.9148604 18 36.9148604 18 40.0480622 41.921875 40.0480622 41.921875 36.9148604"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

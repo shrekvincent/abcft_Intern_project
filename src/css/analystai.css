@@ -272,13 +272,7 @@ img {
   height:272px;
   box-sizing: border-box;
 } */
-.search-list-item {
-  width:160px;
-  height:20px;
-  box-sizing: border-box;
-  white-space:nowrap;
-  text-overflow:ellipsis;
-}
+
 .first-item {
   float:left;
   margin-left:0;
@@ -404,22 +398,35 @@ img {
   counter-reset:ranking-list;
   list-style-type:none;
 }
+/* .search-list-item {
+  width:160px;
+  height:20px;
+  box-sizing: border-box;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+} */
 .search-list-item {
   width:160px;
   height:20px;
   line-height:20px;
   padding-right:20px;
   margin-top:20px;
+  font-size:15px;
+  font-weight:bold;
   color:#fff;
+  box-sizing: border-box;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
 }
 .search-list-item:before {
   display:inline-block;
   counter-increment: ranking-list;
   content:counter(ranking-list);
   font-size:14px;
-  width:20px;
-  height:20px;
-  line-height:20px;
+  width:18px;
+  height:18px;
+  line-height:19px;
   margin-right:20px;
   text-align:center;
   border:1px solid #fff;
@@ -436,6 +443,14 @@ img {
 .search-list-item:nth-of-type(1):before {
   background:#287ddc;
   border-color:#287ddc;
+}
+.search-list-item:nth-of-type(2):before {
+  background:#6da2f1;
+  border-color:#6da2f1;
+}
+.search-list-item:nth-of-type(3):before {
+  background:#90bdff;
+  border-color:#90bdff;
 }
 /* .search-list-item.new:after {
   display: inline-block;
@@ -668,7 +683,7 @@ ul li a {
 
   position: absolute;
   width:420px;
-  height:420px;
+  height:500px;
   display:none;
   border:1 solid red;
   clear:both;
@@ -681,11 +696,11 @@ ul li a {
   box-sizing:border-box;
   display:flex;
 }
-#Idivtwo
+#popOutTwo
 {
   position: absolute;
   width:280px;
-  height:400px;
+  height:355px;
   /* display:none; */
   border:1 solid red;
   clear:both;
@@ -706,6 +721,7 @@ ul li a {
   height:400px;
   display:none; */
   /* padding:15px 20px; */
+  background-color:#f8f8f8;
   overflow:hidden;
   float:left;
   width:300px;
@@ -730,7 +746,7 @@ ul li a {
   padding-left:15px;
   /* display:table; */
   float:left;
-  width:300px;
+  width:175px;
   /* height:100px; */
   /* border-bottom:1px solid #e8e8e8; */
   background-color:#f8f8f8;
@@ -753,7 +769,10 @@ ul li a {
   /* border-bottom:1px solid #e8e8e8; */
 }
 .little-line {
-  float:left;
+  /* float:left; */
+  display:flex;
+  flex-direction:row;
+  align-items:center;
   font-size:14px;
   width:250px;
   height:50px;
