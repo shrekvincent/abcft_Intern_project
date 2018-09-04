@@ -702,3 +702,23 @@ React学习：
     git log 查看 commit 记录（复制版本号）  git log --online 
     git reset [--hard|soft|mixed|merge|keep] [commit|HEAD],使用git reset --hard <版本号>
 
+操作方法
+            （1）size属性;(2)set(key,value);(3)get(key);(4)has(key);(5)delete(key);(6)clear()
+
+**2018/9/3
+        *在js中event.stopPropagation()可以阻止冒泡事件;在React中要组织冒泡，特别是原生document上绑的事件和react组件上
+        绑的事件时，要阻止冒泡就得用event.nativeEvent.stopImmediatePropagation();
+  **JS复习要点：
+        1.正则表达式
+        2.HTTP2协议
+        3.布局
+        4.Array（）对象常用方法
+        5.设计一个函数，使其存入一个数组，在函数内部执行先后执行数组的函数（异步的），并把结果返回控制台
+
+
+  *React中src下引用图片资源需要先import 导入或者将图片资源放到public中才能引用，src中的图片不能通过
+  url静态链接的方式引用；
+  *代码提交错误，回滚步骤：
+    git log 查看 commit 记录（复制版本号）  git log --online 
+    git reset [--hard|soft|mixed|merge|keep] [commit|HEAD],使用git reset --hard <版本号>
+

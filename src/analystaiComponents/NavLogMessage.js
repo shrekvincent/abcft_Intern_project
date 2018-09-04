@@ -32,12 +32,11 @@ class NavLogMessage extends Component {
     event.nativeEvent.stopImmediatePropagation();
 
     if (this.state.displayStyle === "none") {
-      console.log('none');
+      document.getElementById('popOutOneShow').style.display = 'none';
       this.setState({
         displayStyle:'block'
       })    
     } else {
-      console.log('block');
       this.setState({
         displayStyle:'none'
       })
@@ -76,7 +75,7 @@ class PopOutTwo extends Component {
       {id:5,mes:'退出登录',picSite:'pinFive'},
     ];
     return (
-      <div id="popOutTwo" 
+      <div id="popOutTwoShow" 
         style={{display:this.props.displayStyle,top:'39px',right:'132px'}}
         onClick = {this.handleClick}
         >

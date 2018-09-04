@@ -39,7 +39,7 @@ class NavNine extends Component {
     event.nativeEvent.stopImmediatePropagation();
     if (this.state.displayStyle === "none") {
       // console.log('none');
-      // document.getElementById('popOutTwo').style.dispaly = 'none';
+      document.getElementById('popOutTwoShow').style.display = 'none';
       this.setState({
         displayStyle:'block'
       })    
@@ -84,7 +84,7 @@ class NavPopOutContentOne extends Component {
 
     }
     return (
-      <div style={{display:this.props.displayStyle}}>
+      <div id="popOutOneShow" style={{display:this.props.displayStyle}}>
         <ProductList list={Ninth} />
       </div>
     );
@@ -97,10 +97,6 @@ class ProductList extends Component {
     event.stopPropagation();
     event.nativeEvent.stopImmediatePropagation();
   }
-
-  // getInputBg(props) {
-
-  // }
   render() {
     const List = this.props.list.map((item,id) =>
     <li key={id} className="product-one" style={{background:"{item.sty}"}}>{item.mes}</li>

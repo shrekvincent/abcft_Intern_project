@@ -12,6 +12,10 @@
   flex-direction:column;
   overflow:hidden;
   box-sizing: border-box;
+  font-family: "PingFangSC-normal", 
+                "Helvetica Neue", 
+                Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", 
+                "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif !important
 }
 ul li {
   list-style: none;
@@ -423,7 +427,7 @@ img {
   display:inline-block;
   counter-increment: ranking-list;
   content:counter(ranking-list);
-  font-size:14px;
+  font-size:15px;
   width:18px;
   height:18px;
   line-height:19px;
@@ -696,7 +700,7 @@ ul li a {
   box-sizing:border-box;
   display:flex;
 }
-#popOutTwo
+#popOutTwoShow
 {
   position: absolute;
   width:280px;
