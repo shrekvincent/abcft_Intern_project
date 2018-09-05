@@ -30,7 +30,7 @@ class SearchRanking extends Component {
           <div className="list-title">搜索排行</div>
           {/* <RankingList posts={posts} /> */}
           <ol className="list-box">
-            <li className="search-list-item up"><a href="#">养老目标基金</a></li>
+            <li className="search-list-item up"><a href="#" className="textContent">养老目标基金</a></li>
             <li className="search-list-item new down"><a href="#">浙江大湾区</a></li>
             <li className="search-list-item new"><a href="#">周期行业</a></li>
             <li className="search-list-item draw"><a href="#">医药生物</a></li>

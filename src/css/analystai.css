@@ -12,10 +12,10 @@
   flex-direction:column;
   overflow:hidden;
   box-sizing: border-box;
-  font-family: "PingFangSC-normal", 
+  /* font-family: "PingFangSC-normal", 
                 "Helvetica Neue", 
                 Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", 
-                "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif !important
+                "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif !important */
 }
 ul li {
   list-style: none;
@@ -40,9 +40,10 @@ datalist {
 input[type=search] {
   /* background: url(../img/MAGN.png) no-repeat 9px center; */
   float:left;
-  background:url(../img/MAG1.png) no-repeat 10px center;
+  background:url(../img/MAG1.png) no-repeat 6px center;
   background-color:white;
-  padding:0 0 0 40px;
+  background-size: 23px 23px;
+  padding:0 0 0 32px;
   cursor:text;
   border:0;
   /* border:1px solid grey; */
@@ -185,7 +186,7 @@ img {
 .search-box {
   width:818px;
   position:relative;
-  margin:44px auto 86px;
+  margin:44px auto 4px;
   font-size:14px;
   line-height:1 !important;
   display:flex;
@@ -271,12 +272,6 @@ img {
   height:22px;
   box-sizing: border-box;
 }
-/* .list-box {
-  width:160px;
-  height:272px;
-  box-sizing: border-box;
-} */
-
 .first-item {
   float:left;
   margin-left:0;
@@ -401,6 +396,10 @@ img {
   background:transparent;
   counter-reset:ranking-list;
   list-style-type:none;
+  display: block;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
 }
 /* .search-list-item {
   width:160px;
@@ -416,6 +415,7 @@ img {
   padding-right:20px;
   margin-top:20px;
   font-size:15px;
+  padding-right: 24px;
   font-weight:bold;
   color:#fff;
   box-sizing: border-box;
@@ -434,6 +434,7 @@ img {
   margin-right:20px;
   text-align:center;
   border:1px solid #fff;
+  border-color:rgba(255,255,255,0.27);
 }
 .list-item.up {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAeCAYAAAAhDE4sAAAAAXNSR…+Us0C0CioYjmutZrSa0fIJLFf82/fImLGbjvwpToom9Q1Sqn9gytB6bgAAAABJRU5ErkJggg==);
@@ -600,16 +601,28 @@ img {
   text-align:left;
 }
 .second-class {
-  /* width:33%; */
-  padding-left:5px;
-  padding-right:5px;
-  box-sizing:border-box;
+  /* padding-left:-5px;
+  padding-right:-5px;
+  box-sizing:border-box; */
+  margin-left: -3px;
+  width: 305px;
+  height: 528px;
+  padding: 30px 10px 10px;
+  color:rgba(0,0,0,0.65);
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.5;
+  user-select: text;
+  white-space: normal;
+  font-weight: 400;
 }
 .product-one{
+  margin:0;
+  padding:0;
   box-sizing:border-box;
   width:33%;
-  height:100px;
-  width:56px;
+  height:110px;
+  width:95px;
 
   /* padding-top:0px;
   padding-bottom:0px;
@@ -618,8 +631,8 @@ img {
   /* width:48px; */
   float:left;
   cursor:pointer;
-  background:url(../img/icon-report.svg) no-repeat 1px 2px;
-  margin:10px 40px 0 40px;
+  background:url(../img/icon-report.svg) no-repeat center 2px;
+  /* margin:10px 40px 0 40px; */
   padding-top:60px;
   background-size:48px 48px;
   /* padding-top:40px; */
@@ -684,10 +697,10 @@ ul li a {
 } */
 #Idiv
 {
-
+  box-shadow: -2px -2px 5px rgba(0,0,0,0.06);
   position: absolute;
-  width:420px;
-  height:500px;
+  width:300px;
+  height:528px;
   display:none;
   border:1 solid red;
   clear:both;
@@ -703,15 +716,16 @@ ul li a {
 #popOutTwoShow
 {
   position: absolute;
-  width:280px;
+  width:250px;
   height:355px;
   /* display:none; */
   border:1 solid red;
   clear:both;
   list-style-type: none;
   z-index:99;
-  overflow:hidden;
-
+  /* overflow:hidden; */
+  /* overflow:hidden; */
+  box-shadow: -2px -2px 5px rgba(0,0,0,0.06);
   background-color:#fff;
   /* background-clip:padding-box; */
   border-radius:4px;
@@ -728,13 +742,13 @@ ul li a {
   background-color:#f8f8f8;
   overflow:hidden;
   float:left;
-  width:300px;
+  width:250px;
   font-weight:bold;
   color:#333;
   /* border-bottom:1px solid #e8e8e8; */
   font-size:14px;
   /* text-align:left; */
-  border-radius:4px;
+  /* border-radius:4px; */
   /* padding-left:40px; */
   /* border:1 solid red; */
   /* padding:15px 20px;
@@ -766,10 +780,13 @@ ul li a {
   text-align:left;
   font-size:14px;
   cursor:pointer;
-  padding-left:15px;
-  padding-right:15px;
+  padding-left:20px;
+  padding-right:20px;
   float:left;
   text-align:left;
+  width: 210px;
+  padding-left: 20px;
+  padding-right: 20px;
   /* border-bottom:1px solid #e8e8e8; */
 }
 .little-line {
@@ -778,7 +795,7 @@ ul li a {
   flex-direction:row;
   align-items:center;
   font-size:14px;
-  width:250px;
+  width:210px;
   height:50px;
   border-bottom:1px solid #e8e8e8;
 }

@@ -73,17 +73,22 @@
   border-bottom:1px solid #fff;
 }
 .loginHeadMessageStyleOne {
-  width:80px;
-  height:80px;
-  margin-left:0;
+  width:64px;
+  height:64px;
+  margin-left:00px;
+  margin-top: 20px;
+  margin-right:10px;
   border-radius:50px;
 }
 .loginHeadMessageStyleTwo {
-  padding-left:15px;
+  /* padding-left:15px; */
+  width: 136px;
+  height: 47px;
   font-weight:normal;
 }
 .loginHeadMessageStyleThree {
   width:50px;
+  height: 37px;
   box-sizing:border-box;
   margin:0;
   font-size:18px;
@@ -145,4 +150,133 @@
   background-position:right center;
   background-repeat: no-repeat;
   background-size:9px 15px;
+}
+
+
+
+/* 弹出层小尖尖 */
+.sp1,.sp2
+{
+  display:block;
+  height:0px;
+  width:0px;
+  position:absolute;
+  font-size:0;
+  line-height:0;
+}
+.sp1
+{
+  top:-9px;    /* 它的绝对值加上span的边框宽度等于div边框宽度的5倍 */
+  left:40px;   /* 它来确定尖角的位置 */
+  border-top:0px;
+  border-bottom:6px solid black;  /* 注意颜色的变化 */
+  border-right:6px solid white;
+  border-left:6px solid white;
+}
+.sp2
+{
+  top:6px;  /* 是自身边框宽度的2倍 */
+  left:-3px; /* 是自身边框宽度的-1倍  */
+  border-top:0px;
+  border-bottom:3px solid white;
+  border-right:3px solid black;
+  border-left:3px solid black;
+}
+
+
+/* 弹出层箭头 */
+.popOutArrow {
+  top: -4px;
+  right: 16px;
+  transform: rotate(45deg);
+  position: absolute;
+  background: #f8f8f8;
+  width: 8px;
+  height: 8px;
+  display: block;
+  box-shadow: -2px -2px 5px rgba(0,0,0,0.06);
+}
+
+/* 细节调整样式 */
+.main-menu-btn-item a:hover {
+  color:#fff;
+  /* color: hsla(0,0%,100%,.65); */
+}
+
+.textContent {
+  width: 80px;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.searchContainer {
+  /* width: 900px;
+  height: 1000px;
+   */
+   margin-bottom: 70px;
+   overflow: hidden;
+}
+.searchPopOut {
+  position: absolute;
+  /* position: relative; */
+  width: 818px;
+  height: 289px;
+  z-index: 10;
+  background-color: #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  overflow: auto;
+}
+.latestSearch .hotSearch {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.65);
+}
+.searchTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #666;
+  line-height: 32px;
+  font-size: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.searchQuery {
+  list-style: none;
+  display: block;
+}
+.searchOption {
+  position: relative;
+  display: block;
+  padding: 5px 20px;
+  line-height: 22px;
+  font-weight: 400px;
+  color: #262626;
+  cursor: pointer;
+  font-size: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.searchOption:hover {
+  background-color:#f0f5fc;
+}
+.queryDelete {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.deleteStyle {
+  /* display: none; */
+  color: #666;
+  color: transparent;
+  font-size: 12px;
+  padding-left: 12px;
+}
+.deleteStyle:hover {
+  /* display: block; */
+  color: #666;
 }
