@@ -1,0 +1,910 @@
+原始值：stack: first in last out 有底没顶的箱子
+引用值: heap： 
+ 
+var arr = [1];
+var arr1 = arr;
+arr.push(2);
+document.write(arr11);
+原始值和引用值存储的位置不同
+栈和栈之间的赋值是拷贝，之间不影响；
+堆中放值，栈放对应的堆的地址值；
+不可改变的原始值
+js语法错误回引发后续代码终止，但不会影响其它js代码块；
+
+运算操作符：
+“+”
+1.数学运算
+2.字符串连接（任何数据类型加字符串都等于字符串）
+var a = 1 + 1 + "a" + 1 + 1;
+doucument.write(a); // 2a1;
+
+var a = 0/0;
+document.write(a); //Nan
+赋值的顺序 自右向左，计算的顺序 自左向右；
+计算：
+Var a = (10 * 3 - 4 / 2 + 1) % 2;
+    b = 3;
+b %= a + 3;
+document.write(a++);
+document.write("<br>");
+document.write(--b);
+// 1 
+// 3
+
+var a = 123;
+var b = 234;
+a = a + b;
+b = a - b;
+a = a - b;
+
+var a = "a" + true + 1;
+var a = 1 + "a" + 1;
+var a = 1 + "a" + 1 + 1;
+document.write(a);
+//atrue1;
+//1a1;
+// 1 / 0  Infinity Number
+// NaN Not a number
+
+var a = 1;
+var b = a -- + -- a;
+document.write(b);
+// 1 错误
+// 0 --a的优先级最高 --a = 0 ,a = 0
+
+交换ab的值
+var a = 123;
+var b = 234;
+a = a + b;
+b = a - b;
+a = a - b;
+doucment.write(a, b);
+
+
+var a = undefine = undefine;//true
+var a = Infinity = Infinity;//true
+var a = NaN = NaN;//false就他特殊
+document.write(a);
+
+逻辑运算符
+&& || ! 与或非
+// undefined null NaN "" 0 false ==>false
+//先看第一表达式转换成布尔值的结果，如果结果为真，那么他会看第二个表达式转换为布尔值的结果，然后如果只有两个表达式的
+化，只看到第二个表达式，就可以返回该表达式的值了。
+//
+var a = 1 && 2;//2
+var a = 1 && 2 + 2;//4
+var a = 0 && 1;//0
+var a = 1 + 1 && 1-1;//0
+document.write(a);//2
+短路语句:2 > 1 && document.write("成哥很帅");
+执行一个语句，会用到data
+var data = ...;
+data && fn(data) {
+
+}
+||写兼容
+div.onclick = function (e) {
+    非IE浏览器
+    var event = e || window.event;
+}
+
+var score = parseInt(window.prompt('input'));
+
+
+for循环
+var i = 1;
+var count = 0;
+for(; i; ) {
+    document.write('a');
+    count ++;
+    if(count == 10) {
+        i = 0;
+    }
+}
+
+for(var i = 0; i < 100; i++) {
+    if(i % 3 ==0 || i % 5 == 0 || i % 7 == 0) {
+        document.write(i + " ");
+    }
+}
+
+var i = 100;
+for(; i -- ; ) {
+    document.write(i + " ");
+}
+
+练习
+alert(typeof(a)); "undefined"
+alert(typeof(undefined)); "undefined"
+alert(typeof(NaN)); number 
+alert(typeof(null)); object
+alert(typeof(NaN));
+var a = "123abc";
+alert(typeof( + a));
+alert(typeof(!!a));
+alert(1 == "1");
+alert(NaN == NaN);
+alert("11" + 11);
+alert(1 === "1");
+alert(parseInt("123abc"));
+var num = 123123.345789;
+alert(num.toFixed(3));
+
+高内聚 低耦合 -> 函数
+函数名：小驼峰规则
+函数声明：
+function theFirstName() {
+
+}
+函数表达式：
+var test = function () {}
+var test = function demo() {}
+形参、实参的个数可以不对应
+
+function sum(a) {
+    // arguments -- [11, 2, 3]实参列表
+    // sum.length -- 实参列表
+    console.log(arguments);
+
+    if(sum.length > arguments.length) {
+        console.log("形参多了");
+    } else if(sum.length < arguments.length) {
+        console.log("实参多了")；
+    } else {
+        console.log("相等")；
+    }
+
+}
+sum(11, 2, 3)
+
+实现任意数求和
+function sum() {
+    var result = 0;
+    for(var i = 0; i < arguments.length; i++) {
+        result += arguments[i];
+    }
+    console.log(result);
+}
+sum(1, 2, 3, 4, 5, 6);
+
+很神奇：
+function sum(a, b) {
+    //arguments [1, 2]
+    //var a = 1;
+    a = 2;
+    arguments[0] = 3;
+    console.log(a); //3 两个人，但是我变你也变
+}
+sum(1, 2);
+另外一个神奇：
+function sum(a, b) {
+    //arguments [1]
+    b = 2;
+    console.log(arguments[1]); //undefined 实参列表出生有几个就有几个 不再加
+}
+sum(1);
+
+function sum(a, b) {
+    console.log('a');
+    return;
+    console.log('b');
+}
+return 1.终止函数 2.返回值
+
+
+把字符串转换为数字
+function muNumber(target) {
+    return +target;
+}
+var num = myNumber('123');
+console.log(typeof(num) + " " + num);
+
+typeof可以加括号也可以加空格 
+typeof(12) typeof 12; 
+
+函数作用域：
+var a = 123;
+function test() {
+    var b = 123;
+}
+test();
+document.write(b);
+函数里面可以范文函数外面，函数外面不能访问函数里面
+
+var a = 123;
+function test() {
+    var b = 123;
+    function demo() {
+        var c = 234;
+        document.write(b);
+        document.write(a);
+    }
+    demo();
+    document.write(c);
+}
+test();
+
+10000 一万元
+10001 
+10010
+10100
+11000
+101000 
+银行家算法：千分位有零则读0
+
+js运行三部曲：语法分析  预编译 解释执行
+
+预编译：
+test();
+function test() {
+    console.log('a');
+}
+
+//
+var a = 123;
+console.log(a);
+
+//
+console.log(a); //undefined
+var a = 123; 
+//
+console.log(a);//报错
+
+总结：
+函数声明整体提升：函数只要声明了就会放到最前面
+变量 声明提升：只是声明提升 赋值不提升
+
+//
+console.log(a);
+function a(a) {
+    var a = 234;
+    var a = function () {
+
+    }
+    a();
+}
+var a = 123;
+
+//
+预编译前奏
+1.imply global暗示全局变量：即任何变量，如果变量未经声明就赋值，此变量就为全局对象所有。
+a = 10; window.a = 10;
+全局对象是window
+window.a = 10
+console.log(a); // 10
+
+//
+var a = b = 123;
+console.log(a);//undefined
+console.log(b);//123
+2.一切声明的全局变量，全是window的属性
+eg: var a = 123; ==> window.a = 123;
+window就是全局的域
+function test() {
+    var b = 123;
+}
+test();
+console.log(window.b); //undefined b是声明的局部变量
+window就是全局：
+var a = 123;
+console.log(a); ==>console.log(window.a);
+
+function fn(a) {
+    console.log(a);// function a() {}
+    var a = 123;
+    console.log(a);//123
+    function a () {}
+    console.log(a);//123
+    var b = function () {}
+    console.log(b);// function () {}
+    function d () {}
+}
+fn(1);
+预编译发生在函数执行的前一刻
+
+1.创建AO对象（activation object）执行期上下文:函数执行的存储空间库
+2.找形参和变量声明，将变量和形参名作为AO属性名，值为undefined
+3.将实参值和形参统一
+4.在函数体里面找函数声明，值赋予函数体
+AO {
+    a : undefined;
+    b : undefined;
+}
+AO {
+    a : 1;
+    b : undefined;
+}
+AO {
+    a : function a () {}
+    b : undefined,
+    d : function d() {}
+}
+函数执行
+AO {
+    a : function a () {}
+    b : function () {}
+    d ：function () {}
+}
+
+eg: 
+function test(a, b) {
+    console.log(a);//1
+    c = 0;
+    var c;
+    a = 3;
+    b = 2;
+    console.log(b);//2
+    function b () {}
+    function d () {}
+    console.log(b);//2
+}
+test(1);
+//
+AO {
+    a : undefined,
+    b : undefined,
+    c : undefined,
+}
+
+AO {
+    a : 1,
+    b : function b () {},
+    c : undefined
+    d : function d () {}
+}
+//
+function test(a, b) {
+    console.log(a);//function a () {}
+    consolo.log(b);//undefined 
+    var b = 234;
+    console.log(b);//234
+    a = 123;
+    console.log(a);//123
+    function a () {}
+    var a;
+    b = 234;
+    var b = function () {} //这是函数表达式，不是函数声明
+    console.log(a);//123
+    console.log(b);//functin () {}
+}
+test(1);
+OA {
+    a : function a () {},
+    b : undefined,
+}
+
+全局的预编译：
+1.生成了一个GO的对象 global object
+GO {
+    a : 123,
+} GO === window
+
+function test() {
+    var a = b = 123;
+    console.log(window.b);//123;
+    console.log(window.a);//undefined;
+}
+GO {
+    a : 123;
+}
+AO {
+    b : 
+}
+//
+
+console.log(test);//function () {}
+function test(test) {
+    console.log(test);//function () {}
+    var test = 234;
+    console.log(test);//234
+    function test() {}
+}
+test(1);
+var test = 123;
+
+GO {
+    test : function () {}
+}
+
+AO {
+    test : function () {},
+}
+
+//
+var global = 100;
+function fn() {
+    console.log(global);//100
+}
+GO {
+    global : 100,
+    fn : function () {}
+}
+AO {
+
+}
+//
+global = 100;
+function fn() {
+    console.log(global);//undefined
+    global = 200;
+    consoloe.log(global);//200
+    var global = 300;
+}
+fn();
+var global;
+GO {
+    global: 100
+}
+AO {
+    global : undefined
+}
+//
+function test () {
+    console.log(b);//undefined
+    if(a) {
+        var b = 100;
+    }
+    console.log(b);//undefined
+    c = 234;
+    console.log(c);//234
+}
+var a;
+test();
+a = 10;
+console.log(c);//234
+GO {
+    a : 10,
+    c : 234
+}
+AO {
+    b : undefined
+}
+//
+function bar() {
+    return foo;
+    foo = 10;
+    function foo() {
+
+    }
+    var foo = 11;
+}
+console.log(bar());//function () {}
+
+//
+console.log(bar());//11
+function bar() {
+    foo = 10;
+    function foo() {
+
+    }
+    var foo = 11;
+    return foo;
+}
+
+//
+a = 100;
+function demo(e) {
+    function e() {}
+    arguments[0] = 2;
+    console.log(e);//2
+    if(a) {
+        var b = 123;
+        function c() {
+            google之前可以在if中定义function 现在不行
+        }
+    }
+    var c;
+    a = 10;
+    var a;
+    console.log(b);//undefined
+    f = 123;
+    console.log(c);//undefined fn
+    console.log(a);//10
+}
+var a;
+demo(1);
+console.log(a);//100
+console.log(f);//123
+
+GO {
+    a : 100,
+    demo : function () {}
+    f : 123
+}
+AO {
+    e : 2,
+    b : undefined,
+    c : undefined, (function () {})
+    a : 10,
+}
+
+//隐式类型转换
+var str = false + 1;
+console.log(str);//1
+var demo = false == 1;
+console.log(demo);//false
+if(typeof(a)&&-true + (+undefined) + "") {
+    console.log('基础扎实');//undefined NaN 
+}
+if(11 + "11" * 2 == 33) {
+    console.log('基础扎实');
+}
+!!" " + !!"" - !!false||console.log('你觉得你能打印，你就是猪');
+true +   true   -  false = 1 || 
+typeof(null);//object
+
+h1b 85000 660000 工作签证
+(window.foo || (window.foo = 'bar'));
+console.log(window.foo);
+
+作用域精解：
+[[scope]]:每个javascript函数都是一个对象，对象中有些属性我们可以访问，但有些不可以，这些属性仅供javascript引擎存取，[[scope]]就是其中一个。
+[[scope]]：指的就是我们所说的作用域，其中存储了运行期上下文的集合。
+作用域链：[[scope]]中所存储的执行期上下文对象的集合，这个集合呈链式链接，我们把这种链式链接叫做作用域链。
+执行期上下文：当函数执行时，会创建一个称为执行期上下文的内部对象，一个执行期上下文定义了一个函数执行时的环境，函数每次执行时对应的执行期上下文都是独一无二的，
+所以每次调用一个函数会导致创建多个执行上下文，当函数执行完毕，它所产生的执行上下文被销毁。
+查找变量： 从作用域链的顶端依次向下查找
+
+function a () {
+
+}
+var glob = 100;
+a();
+
+// a define a.[[scope]]  --> 0 : GO {}
+// a doing  a.[[scope]]  --> 0 : AO {}
+                             1 : GO {}
+
+//
+function a () {
+    function b () {
+        function c () {
+
+        } 
+        c();
+    } 
+    b();
+}
+a();
+
+a define a.[[scope]] --> 0: GO
+a doing  a.[[scope]] --> 0: aAO
+                         1: GO
+b define b.[[scopr]] --> 0: aAO
+                         1: GO
+b doing  b.[[scope]] --> 0: bAO
+                         1: aAO
+                         2: GO
+c define c.[[scope]] --> 0: bAO
+                         1: aAO
+                         2: GO
+c doing  c.[[scope]] --> 0: cAO
+                         1: bAO
+                         2: aAO
+                         3: GO
+
+//
+function a () {
+    function b () {
+        var bbb = 234;
+        console.log(aaa);
+    }
+    var aaa = 123;
+    return b;
+}
+var glob = 100;
+var demo = a();//123
+demo();
+内部函数通过return的方式保存到外部生成闭包
+
+//
+function a () {
+    var num = 100;
+    function b () {
+        num ++;
+        console.log(num);
+    }
+    return b;
+}
+var demo = a();
+demo();//101
+demo();//102
+
+闭包：
+当内部函数被保存到外部时，将会生成闭包，闭包会导致原有作用域链不释放，造成内存泄漏
+闭包实现累函数加器：
+function add() {
+    var count  = 0;
+    function demo() {
+        count ++;
+        console.log(count);
+    }
+    return demo;
+}
+var counter = add();
+counter();
+counter();
+counter();
+counter();
+counter();
+可以做缓存（存储结构）
+
+function test() {
+    var num = 100;
+    function a() {
+        num ++;
+        console.log(num);
+    }
+    //a defined a.[[scope]] 0 : testAO
+                            1 : GO
+    function b() {
+        num --;
+        console.log(num);
+    }
+    //b defined b.[[scope]] 0 : testAO
+                            1 : GO
+    return [a, b];
+}
+
+var myArr = test();
+myArr[0]();//101
+//a doing a.[[scope]] 0 : aAO
+                      1 : testAO*
+                      2 : GO
+myArr[1]();//100
+//b doing b.[[scope]] 0 : bAO
+                      1 : testAO*
+                      2 : GO
+
+//
+function eater() {
+    var food = "";
+    var obj = {
+        eat : function () {
+            console.log("I am eating" + food);
+            food = "";
+        },
+        push : function (myFood) {
+            food = myFood;
+        }
+    }
+    return obj;
+}
+var eater1 = eater();
+eater1.push('banana');
+eater1.eat();
+可以实现封装，属性私有化；
+模块化开发，防止污染全局变量；
+
+
+//立即执行函数:
+//针对初始化功能的函数
+(function () {}())
+
+(function abc() {
+    var a = 123;
+    var b = 234;
+    console.log(a + b);
+}())
+
+//
+var num = (function (a, b, c) {
+    var d = a + b + c * 2;
+    return d;
+}(1, 2, 3));
+
+// (function () {} ());w3c建议
+// (function () ())();
+
+function test() {
+    var arr = [];
+    for(var i = 0; i < 10; i ++) {
+        arr[i] = function () {
+            document.write(i + " ");
+        }
+    }
+    return arr;
+}
+
+var myArr = test();
+for(var j = 0; j < 10; j++) {
+    myArr[j]();
+}//打印10 个 10
+
+对象：
+对象的增删查改
+对象的创建方法：
+1.var obj = {} plainObject 对象字面量/对象直接量
+2.构造函数
+   （1）系统自带的构造函数 object（）
+   （2）自定义
+   var obj = new Object();
+   var obj = {};
+避免构造函数与函数混淆，构造函数大驼峰命名规则
+function Car(color) {
+    this.color = color;
+    this.name = "BMW";
+    this.height = "1400";
+    this.lang = "4900";
+    this.weight = 1000;
+    this.health = 100;
+    this.run = function () {
+        this.health --;
+    }
+}
+var car = new Car();
+var car1 = new Car();
+
+构造函数内部原理：
+
+//
+包装类：
+var num = 3;
+num.len = 3;
+// new Number(4).len = 3; delete
+// new Number(4).len
+console.log(num.len);//undefined
+
+//
+var str = "abcd";
+str.length = 2;
+// new String("abcd").length = 2; delete
+console.log(str);//abcd
+//new String("abcd").length
+console.log(str.length);//4
+
+//
+var str = "abc";
+str += 1;
+var test = typeof(str);//test == "String"
+if(test.length == 6) {
+    test.sign = "typeof的返回结果可能为String";
+    //new String(test).sign = 'xxx'; delete
+}
+//new String(test).sign
+console.log(test.sing);//undefined
+
+//闭包
+function Person(name, age, sex) {
+    var a = 0;
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+    function sss() {
+        a ++;
+        document.write(a);
+    }
+    this.say = sss;
+}
+var oPerson = new Person();
+oPerson.say();//1
+oPerson.say();//2
+var oPerson1 = new Person();
+oPerson1.say =();//1
+
+//
+var x = 1, y = z = 0;
+function add(n) {
+    return n = n + 1;
+}
+y = add(x);
+function add(n) {
+    return n = n + 3;
+}
+z = add(x);
+// x y z;   
+  1 4 4//变量提升
+
+//
+下面代码中console.log的结果是[1, 2, 3, 4, 5]的选项是：ACD
+//A
+function foo(x) {
+    console.log(arguments)
+    return x
+}
+foo(1, 2, 3, 4, 5)
+//B
+function foo(x) {
+    console.log(arguments)
+    return x
+}(1, 2, 3, 4, 5) 
+不报错也不执行，分开
+//C
+(function foo(x) {
+    console.log(arguments)
+    return x
+})(1, 2, 3, 4, 5) 
+//D
+function foo() {
+    bar.apply(null, arguments)
+}
+function bar(x) {
+    console.log(arguments)
+}
+foo(1, 2, 3, 4, 5)
+
+//
+parseInt(3, 8);//3写成8进制 3
+parseInt(3, 2);//3写成2进制 NaN
+parseInt(3, 0);//3         NaN
+//
+
+以下哪些是JAVASCRIPT语言typeof可能返回的结果 ABC
+String
+arrary
+object
+null(历史遗留问题不能返回)
+
+// 
+function b(x, y, a) {
+    arguments[2] = 10;
+    alert(a);
+}
+b(1, 2, 3);//10
+如果函数体改成下面，结果又会是什么？
+a = 10;
+alert(arguments[2]);
+//10
+
+//
+写一个方法，求一个字符串的字节长度（提示：字符串有一个方法charCodeAt(),一个中文占两个字节，一个英文占一个字节）
+定义和用法
+charCodeAt()方法可返回指定位置的字符的Unicode编码，这个返回值是0-65535之间的整数（当返回值是<=255时，为英文，当返回值>255时为中文）
+语法
+stringObject.charObjectAt(index)
+
+//
+// 1.当前字符位的unicode > 255 ,那么该字符字节长度为2
+   2.<=255 1
+var str = "adalfj;";
+function bytesLength(str) {
+   // var count = str.length;
+    //for(var i = 0; i < str.length; i++) {
+      //  if(str.charCodeAt(i) > 255) {
+        //    count ++;
+        //}
+    //}
+    var count = 0;
+    for(var i = 0; i < str.length; i++) {
+        if(str.charCodeAt(i) > 255) {
+            count += 2;
+        } else {
+            count ++;
+        }
+    }
+    return count;
+}
+
+//
+原型：
+定义：原型是function对象的一个属性，它定义了构造函数造出的对象的公共祖先，通过该构造函数产生的对象，可以继承该原型的属性和方法，原型也是对象
+function Person() {
+
+}
+Person.prototype --原型
+Person.prototype = {}
+Person.prototype.name = "hehe";
+Person.prototype.say = functioin () {
+    console.log('nihao');
+}
+function Person() {
+    this.name = "Deng";
+
+}
+var person = new Person();//console.log(person.name);//Deng
+//
+利用原型特点和概念，可以提取共有属性；
+//
+Car.prototype.height = 1400;
+Car.prototype.lang = 4900;
+Car.prototype.carName = "BMW";
+function Car(color, owner) {
+    this.owner = owner;
+    this.color = color;
+}
+
+var car = new Car('red', 'prof.jc');
+var car1 = new Car('red', 'laodeng');
+
+//
