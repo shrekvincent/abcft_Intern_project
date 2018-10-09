@@ -907,4 +907,870 @@ function Car(color, owner) {
 var car = new Car('red', 'prof.jc');
 var car1 = new Car('red', 'laodeng');
 
+<<<<<<< HEAD
 //
+=======
+//
+
+继承发展史
+1.传统形式 --> 原型链
+过多的继承了没用的属性
+Grand.prototype.lastName = "Ji";
+function Grand() {
+
+}
+var grand = new Grand();
+Father.prototype = grand;
+function Father() {
+    this.name = 'hehe';
+}
+var father = new Father();
+Son.prototype = father;
+function Son() {
+
+}
+var son = new Son();
+2.使用构造函数
+不能继承借用构造函数的原型
+每次构造函数都要多走一个函数
+function Person(name, age, sex) {
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+}
+function Student(name, age, sex, grade) {
+    Person.call(this, name, age, sex);
+    this.grade = grade;
+}
+var student = new Student();
+3.共享原型
+不能随便改动自己的原型
+Father.prototype.lastName = "Deng";
+function Father() {
+
+}
+function Son() {
+
+}
+//Son.prototype = Father.prototype;
+
+function inherit(Target, Origin) {
+    Target.prototype = Origin.prototype;
+} 
+4.圣杯模式
+function inherit(Target, Origin) {
+    function F() {};
+    F.prototype = Origin.prototype;
+    Target.prototype = new F();
+    Target.prototype.constructor. = Target;
+    Target.prototype.uber = Origin.prototype;
+}
+Father.prototype.lastName = "Deng";
+function Father() {
+
+}
+function Son() {
+
+}
+inherit(Son, Father) {
+}
+var Son = new Son();
+var father = new Father();
+//闭包私有化变量
+function Deng(name, wife) {
+    var prepareWife = "xiaozhang";
+    this.name = name;
+    this.wife = wife;
+    this.divorce = function() {
+        this.wife = prepareWife;
+    }
+    this.changePrepareWife = function(target) {
+        prepareWife = target;
+    }
+    this.sayPreparewife = function() {
+        console.log(prepareWife);
+    }
+}
+var deng = new Deng('deng', 'xiaoliu');
+
+//命名空间
+管理变量，防止污染全局，适用于模块化开发
+$('div').css('background-color', 'red').width(100).height(100).html(123).css('position', 'absolute').css('left', '100px'
+).css('top', '100px');
+
+var deng = {
+    somke: {
+        console.log('Smoking,... xuan cool!');
+        //return undefined;
+        return this;
+    },
+    drink: function () {
+        console.log('drink,... ye cool!');
+        return this;
+    },
+    perm: function () {
+        console.log('perming,... cool!');
+        return this;
+    }
+}
+
+//
+var deng = {
+    wife1: {name: "xiaoliu"},
+    wife2: {name: "xiaozhang"},
+    wife3: {name: "xiaomeng"},
+    wife4: {name: "xiaowang"}
+    saywife: function (num) {
+        return this['wife' + num];
+    }
+}
+
+//对象的枚举
+var arr = [1, 2, 3, 4, 5, 6, 7];
+for(var i = 0; i < arr.length; i++) {
+
+}
+//
+var obj = {
+    name : '13',
+    age : 123,
+    sex : 'male',
+    height : 180,
+    weight : 75,
+    __proto__ : {
+        lastName : "deng"
+    }
+}
+
+for(var prop in obj) {
+    //console.log(prop + " " + typeof(prop));
+    if(obj.hasOwnProperty(prop)){
+        console.log(obj[prop]);
+    }
+}
+//
+
+funciton Person() {
+
+}
+var person = new Person();
+
+//A instanceof B
+//A 对象是不是 B构造函数构造出来的
+//看A对象的原型链上 有没有 B的原型
+
+var arr = [] || {};
+
+//练习
+var x = 1, y = z = 0;
+function add(n) {
+    return n = n + 1;
+}
+y = add(x);
+function add(n) {
+    return n = n + 3;
+}
+z = add(x);
+// 1 4 4
+
+//
+function foo() {
+    bar.apply(null, arguments);
+}
+function bar() {
+    console.log(arguments);
+}
+foo(1, 2, 3, 4, 5);
+//12345
+
+//文本水品垂直居中
+line-height = height;
+text-align = center;
+
+以下哪些时javascript语言typeof可能返回的结果
+string
+array
+objec
+null
+
+bool string num undefined null(duixinag) object function
+
+//
+逗号操作符
+var num = (1, 2);//2
+
+var f = (
+    function f() {
+        return "1";
+    },
+    function g() {
+        return 2;
+    }
+)();
+typeof f;//num
+
+//
+var x = 1;
+if(function f() {}) {
+    x += typeof f;
+}
+console.log(x);//1undefined
+
+//
+以下表达式的结果为true（）A C D
+undefined == null  undefined === null isNaN("100") parseInt("1a") == 1
+function myIsNaN(num) {
+    var ret = Number(num);
+    ret += "";
+    if(ret == "NaN") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+123 == 123;//true
+{} == {};//false
+
+
+//this
+1.函数预编译过程中 this --> window
+2.全局作用域里 this --> window
+3.call/apply可以改变函数运行时this指向
+4.obj.func();func()里面的this指向obj
+
+//
+var name = "222";
+var a = {
+    name : "111",
+    say : function () {
+        console.log(this.name);
+    }
+}
+var fun = a.say;
+fun();//222
+a.say();//111
+
+var b = {
+    name : "333",
+    say : function (fun) {
+        fun();//222
+    }
+}
+b.say(a.say);//333
+b.say = a.say;
+b.say();//333
+
+
+//
+function test() {
+    console.log(arguments.callee);//
+}
+test();//test
+
+
+//
+var num = (function (n) {
+    if(n == 1){
+        return 1;
+    }
+    //return n*阶乘（n-1）；
+    return n * arguments.callee(n - 1);
+}(100))
+
+//
+function test() {
+    console.log(arguments.callee);
+    function demo() {
+        console.log(arguments.callee);
+    }
+    demo();
+}
+test();
+>>>>>>> f78b8b78572970f37eae341323acd25ccd0c4ae6
+
+//this
+
+var x = 1, y = z = 0
+function add(n) {
+    n = n + 3;
+}
+x = add(x);
+function add(c) {
+    n = n + 3;
+}
+y = add(x);
+//144
+
+//arguments.callee
+
+var num = (function (n) {
+    if(n == 1) {
+        return 1;
+    }
+    return n * arguments.callee;
+}(100))
+
+//
+function test() {
+    console.log()
+    function demo() {
+        console.log()
+    }
+    demo();
+}
+test();
+
+//caller
+function test() {
+    demo();
+}
+functioin demo() {
+    console.log(demo.caller);
+}
+test();
+
+//
+var foo = 123;
+function print() {
+    this.foo = 234;
+    console.log(foo);
+}
+print();//234
+new print();//123
+
+//
+var a = 5;
+functioin test() {
+    a = 0;
+    alert(a);
+    alert(this.a);
+    var a;
+    alert(a);
+}
+test();//050
+new test();//0 undefined 0
+
+//
+function print() {
+    console.log(foo);
+    var foo = 2;
+    console.log(foo);
+    console.log(hello);
+}
+print();//undefined 2 报错：hello is not undefined
+
+//
+function print() {
+    var test;
+    test();
+    function test() {
+        console.log(1);
+    }
+}
+print();//1
+
+//
+var x = 1;
+function test() {    
+    if(x == "1") console.log("one");//one
+    if(x === "1") console.log("two");
+}
+test();
+
+//
+function print() {
+    var marty = {
+        name : "marty",
+        printName : function () {
+            console.log(this.name);
+        }
+    }
+    var test1 = {name : "test1"};
+    var test2 = {name : "test2"};
+    var test3 = {name : "test3"};
+    test3.printName = mayty.printName;
+    var printName2 = marty.printName.bind({name:123});
+    marty.printName.call(test1);
+    marty.printName.apply(test2);
+    marty.printName();
+    printName2();
+}
+print();
+
+//
+var bar = {a : "002"};
+function print() {
+    bar.a = 'a';
+    Object.prototype.b = 'b';
+    return function inner() {
+        console.log(bar.a);
+        console.log(bar.b);
+    }
+}
+print()();//a b
+
+//
+浅层克隆
+var obj = {
+    name : "hahaha",
+    age : 123,
+    sex : "male"
+}
+var obj1 = {}
+
+function clone(origin, target) {
+    var target = target || {}; 
+    for(var prop in origin) {
+        target[prop] = origin[prop];
+    }
+    return target;
+}
+clone(obj, obj1);
+
+//
+深层拷贝
+var obj = {
+    name : "abc",
+    age : 123,
+    sex : "male",
+    wife : {
+        name : "bcd",
+        age : 1233,
+        Son : {
+            name : "aaa",
+            age : 11
+        }
+    }
+}
+//遍历对象 for(var prop in obj)
+1.判断是不是原始值 typeof() object
+2.判断数组还是对象 instanceof toString  constructor
+3.建立相应的数组或对象
+var obj1 = {}
+function deepClone(orgin, target) {
+    var target = target || {},
+        toStr = Object.prototype.toString,
+        arrStr = "[Object Array]";
+    for(var prop in origin) {
+        if(origin.hasOwnProperty(prop)) {
+            if(origin[prop] !== null && typeof(origin[prop]) == 'object') {
+                if(toStr.call(origin[prop]) == arrStr) {
+                    target[prop] = []'
+                }else {
+                    target[prop] = {};
+                }
+                deepClone(origin[prop], target[prop]);
+            }else {
+                target[prop] = origin[prop];  
+            }
+        }
+    }
+    return target;
+}
+
+//三目运算符
+条件判断？是：否 并且会返回值
+var num = 1 < 0 ? 2 + 2 : 1 + 1
+var num = 1 > 0 ? ("10" > "9" ? 1 : 0) : 2;//0
+"10" > 9;//true
+"10" > "9";1//字符串逐位ascii码比较 //false
+
+//
+数组
+//封装type方法
+var arr = [];//数组字面量
+var arr = new Array();
+//
+es3.0 es5.0 es6.0
+//改变原数组
+push, pop, shift, unshift, sort, reverse, splice
+//不改变原数组
+concat, join -- >split, toString, slice
+
+var arr = [1, 2, 3];
+Array.prototype.push = function () {
+    for(var i = 0; i < arguments.length; i++) {
+        this[this.length] = arguments[i];
+    }
+    return this.length;
+}
+//
+arr.pop();
+//
+...
+
+//sort()
+1.必须写两形参
+2.看返回值 1）当返回值为负数时，那么前面的数放在前面
+           2）为正数，那么后面的数在前
+           3）为0，不动
+var arr = [1, 3, 5, 4, 10];
+    arr.sort(function (a, b) {
+        if(a < b) {
+            reutrn 1;
+        }else {
+            return -1;
+        }
+    })//升序
+arr.sort(function (a, b) {
+    if(a > b) {
+        return a - b;
+    }else {
+        return a - b;
+    }
+})
+arr.sort(function (a, b) {
+    return a - b;//升序
+    return b - a;//降序
+})
+
+//练习
+给一个有序的数组乱序
+var arr = [1, 2, 3, 4, 5, 6, 7];
+//Math.random();(0, 1)
+arr.sort(function () {
+    return Math.random() - 0.5;
+})
+//
+var cheng = {
+    name : "cheng",
+    age : 18,
+    sex : "handsom"
+}
+var deng = {
+    name = "deng",
+    age : 40,
+    sex : undefine,
+    face : 'amazing'
+}
+var zhang = {
+    name : "zhang",
+    age : 20,
+    sex : "male"
+}
+var arr = [cheng, deng, zhang];
+arr.sort(function (a, b) {
+    if(a.age > b.age) {
+        return 1;
+    }else {
+        return -1;
+    }
+    //return a.age - b.age;
+})
+
+//
+var arr = ['11', '33', 'ee', 'ererer'];
+function retBytes(str) {
+    var num = str.length;
+    for(var i = 0; i < str.length; i++) {
+        if(str.charCodeAt(i) > 255) {
+            num++;
+        }
+    }
+    return num;
+}
+arr.sort(function (a, b) {
+    return retBytes(a) - retBytes(b);
+})
+arr.sort(function (a, b) {
+    return a.length - b.length;
+})
+
+//
+var arr = [1, 3, 4 , 5];
+var arr1 = [2, 4, 6,];
+arr.concat(arr1);
+//
+slice(从该位开始截取，截取到该位)
+var newArr = arr.slice(1)
+
+
+//join
+arr.join("-");
+str.split("");
+//
+
+var str = "alibaba";
+var str1 = "baidu";
+var str2 = "tencent";
+var str3 = "toutiao";
+var str4 = "wangyi";
+var str5 = "xiaowang";
+var str6 = "nv";
+var str7 = "";
+var arr = [str, str1, str2, str3, str4];
+for(var i = 0;i < arr.length; i++) {
+    strFinal += str[i];
+    //字符串在栈中存储，first in last out!!
+}
+//散列
+var arr = [];
+var arr = [str, str1, str2, str3, str4];
+arr.join("");//
+arr.join();//逗号连接
+
+//类数组
+var obj = {
+    "0" : "a",
+    "1" : "b",
+    "2" : "c",
+    "length" : 3,
+    "push" : Array.prototype.push，
+    "splice" : Array.prototype.splice
+}
+
+//属性要为索引（数字）属性，必须有length属性，最好加上push
+Array.prototype.push = function (target) {
+    obj[obj.length] = target;
+    obj.length ++;
+}
+//
+var obj = {
+    "2" : "a",
+    "3" : "b",
+    "length" : 2,
+    "push" : Array.prototype.push
+}
+obj.push("c");
+obj.push("d");
+
+//
+obj {
+    "2" : "c",
+    "3" : "d",
+    ...
+}
+//
+
+
+//封装type
+typeof([]) -- Array
+typeof({}) -- object
+typeof(functioin) -- object
+typeof(new Number()) --number Object
+typeof(123) --number
+
+//数组去重
+//要求在原型链上编程
+
+//
+function type(target) {
+    var template = {
+        "[object Array]" : "array",
+        "[objcet Object]" : "object",
+        "[object Number]" : "number - object",
+        "[object Boolean]" : "boolean - object",
+        "[object String]" : "string - object"
+    }
+    if(target === null) {
+        return "null";
+    }
+    if(typtof(target) == "object") {
+        var str = Object.prototype.toString.call(target);
+        return template[str];
+    }else {
+        return typeof(target);
+
+    }
+}
+
+//
+var arr = [1, 1, 1, 2, 3, 4, 5, 5, 6];
+var obj = {
+    "1" : "abc",
+    "2" : "abc"
+}
+Array.prototype.unique = function () {
+    var temp = {};
+    var arr = [];
+    var len = this.length;
+    for(var i = 0; i < len; i++) {
+        if(!temp[this[i]]) {
+            temp[this[i]];
+        }
+    }
+    return arr;
+}
+
+//
+包装类
+var str = "abc";
+
+//new String(str).length;
+console.log(str.length);
+
+//
+var num = 123;
+num.abc = "abc";
+//new Number(num).abc = "abc"; --> delete
+
+//new Number(num).abc
+console.log(num.abc);//undefine
+
+//原型
+Person.prototype.lastName = "deng";
+function Person() {
+    //var this = {
+    //    __proto__ : Person.prototype
+    //}
+}
+var person = new Person();
+console.log(person.lastNmame);//deng
+
+//this call 
+var name = "window";
+var obj = {
+    name : "obj",
+    say : function () {
+        console.log(this.name);
+    }
+}
+obj.say.call(window);//window
+
+var fun = obj.say;
+fun();//window
+fun.call(obj);//obj
+
+//
+functioin Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+function Student(name, age, sex) {
+    Person.call(this, name, age);
+    this.sex = sex;
+}
+var student = new Student("cheng", 18, "male");
+
+//闭包
+var  obj = {};
+function a() {
+    var aa = 123;
+    function b() {
+        console.log(aa);
+    }
+    obj.fun = b;
+}
+a();
+
+//
+function test() {
+    a = 1;
+    var a;
+}
+test();
+//
+function Person() {
+    var money = 100;
+    this.name = name;
+    this.makeMoney = function() {
+        money ++;
+    }
+    this.offer = function () {
+        money --;
+    }
+}
+var person = new Person();
+
+//私有化变量
+function Person(name, age, sex) {
+    var a = 0;
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+    function sss() {
+        a ++;
+        document.write(a);
+    }
+    this.say = sss;
+}
+var oPerson = new Person();
+oPerson.say();//1
+oPerson.say();//2
+var oPerson1 = new Person();
+oPerson1.say();//1
+
+//
+(function (x) {
+    delete x;
+    return x;//1
+})(1)
+
+//
+function test() {
+    console.log(typeof(arguments));//类数组 object
+}
+test();
+
+//
+var h = function a() {
+    return 23;
+}
+console.log(typeof a());
+// a is not defined
+
+//用熟悉的方式写javascript继承
+
+//
+function retDate(date) {
+    var arr = ['1', '2', '3'];
+    var ret = arr[date - 1];
+    if(ret === undefined) {
+        return 'error'
+    }else {
+        return ret;
+    }
+}
+
+//SEO搜索引擎优化
+css中选择器有那些？
+id、味蕾微元素、class、通配符、属性、
+
+js中有哪些数据类型？
+原始值 引用值
+
+//
+1.一个字符串[a - z]组成，请找出该字符串中第一个只出现一次的字幕；
+2.字符去重
+
+
+//
+//在try里面发生的错误，不会执行错误后面try里面的代码
+try{
+    console.log("a");
+    console.log(b);
+    console.log("c");
+
+}catch(e) {// error error.message error.name --> error
+    console.log("e");
+    console.log(e.message + " " + e.name);
+}
+console.log("d");
+
+var data = null;
+
+//
+error.name 3 4
+1.EvalError: eval()的使用与定义不一致
+2.RangeErro:数值越界
+3.ReferencenError:非法或不能识别的引用数值
+4.SyntaxError:语法解析错误
+5.TypeError:操作数类型错误
+6.URIError:URI处理函数使用不当
+
+
+//
+es3.0
+es5.0
+浏览器基于es3.0的方法 + es5.0新增的方法，冲突部分用的es3.0
+
+es3.0 和es5.0产生冲突的部分
+es5.0严格模式 es3.0和es5.0产生冲突的部分就是用es5.0
+否则用es3.0
+//
+"use strict";
+function test() {
+    console.log(arguments.callee);报错
+}
+test();
