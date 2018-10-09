@@ -908,3 +908,279 @@ var car = new Car('red', 'prof.jc');
 var car1 = new Car('red', 'laodeng');
 
 //
+
+继承发展史
+1.传统形式 --> 原型链
+过多的继承了没用的属性
+Grand.prototype.lastName = "Ji";
+function Grand() {
+
+}
+var grand = new Grand();
+Father.prototype = grand;
+function Father() {
+    this.name = 'hehe';
+}
+var father = new Father();
+Son.prototype = father;
+function Son() {
+
+}
+var son = new Son();
+2.使用构造函数
+不能继承借用构造函数的原型
+每次构造函数都要多走一个函数
+function Person(name, age, sex) {
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+}
+function Student(name, age, sex, grade) {
+    Person.call(this, name, age, sex);
+    this.grade = grade;
+}
+var student = new Student();
+3.共享原型
+不能随便改动自己的原型
+Father.prototype.lastName = "Deng";
+function Father() {
+
+}
+function Son() {
+
+}
+//Son.prototype = Father.prototype;
+
+function inherit(Target, Origin) {
+    Target.prototype = Origin.prototype;
+} 
+4.圣杯模式
+function inherit(Target, Origin) {
+    function F() {};
+    F.prototype = Origin.prototype;
+    Target.prototype = new F();
+    Target.prototype.constructor. = Target;
+    Target.prototype.uber = Origin.prototype;
+}
+Father.prototype.lastName = "Deng";
+function Father() {
+
+}
+function Son() {
+
+}
+inherit(Son, Father) {
+}
+var Son = new Son();
+var father = new Father();
+//闭包私有化变量
+function Deng(name, wife) {
+    var prepareWife = "xiaozhang";
+    this.name = name;
+    this.wife = wife;
+    this.divorce = function() {
+        this.wife = prepareWife;
+    }
+    this.changePrepareWife = function(target) {
+        prepareWife = target;
+    }
+    this.sayPreparewife = function() {
+        console.log(prepareWife);
+    }
+}
+var deng = new Deng('deng', 'xiaoliu');
+
+//命名空间
+管理变量，防止污染全局，适用于模块化开发
+$('div').css('background-color', 'red').width(100).height(100).html(123).css('position', 'absolute').css('left', '100px'
+).css('top', '100px');
+
+var deng = {
+    somke: {
+        console.log('Smoking,... xuan cool!');
+        //return undefined;
+        return this;
+    },
+    drink: function () {
+        console.log('drink,... ye cool!');
+        return this;
+    },
+    perm: function () {
+        console.log('perming,... cool!');
+        return this;
+    }
+}
+
+//
+var deng = {
+    wife1: {name: "xiaoliu"},
+    wife2: {name: "xiaozhang"},
+    wife3: {name: "xiaomeng"},
+    wife4: {name: "xiaowang"}
+    saywife: function (num) {
+        return this['wife' + num];
+    }
+}
+
+//对象的枚举
+var arr = [1, 2, 3, 4, 5, 6, 7];
+for(var i = 0; i < arr.length; i++) {
+
+}
+//
+var obj = {
+    name : '13',
+    age : 123,
+    sex : 'male',
+    height : 180,
+    weight : 75,
+    __proto__ : {
+        lastName : "deng"
+    }
+}
+
+for(var prop in obj) {
+    //console.log(prop + " " + typeof(prop));
+    if(obj.hasOwnProperty(prop)){
+        console.log(obj[prop]);
+    }
+}
+//
+
+funciton Person() {
+
+}
+var person = new Person();
+
+//A instanceof B
+//A 对象是不是 B构造函数构造出来的
+//看A对象的原型链上 有没有 B的原型
+
+var arr = [] || {};
+
+//练习
+var x = 1, y = z = 0;
+function add(n) {
+    return n = n + 1;
+}
+y = add(x);
+function add(n) {
+    return n = n + 3;
+}
+z = add(x);
+// 1 4 4
+
+//
+function foo() {
+    bar.apply(null, arguments);
+}
+function bar() {
+    console.log(arguments);
+}
+foo(1, 2, 3, 4, 5);
+//12345
+
+//文本水品垂直居中
+line-height = height;
+text-align = center;
+
+以下哪些时javascript语言typeof可能返回的结果
+string
+array
+objec
+null
+
+bool string num undefined null(duixinag) object function
+
+//
+逗号操作符
+var num = (1, 2);//2
+
+var f = (
+    function f() {
+        return "1";
+    },
+    function g() {
+        return 2;
+    }
+)();
+typeof f;//num
+
+//
+var x = 1;
+if(function f() {}) {
+    x += typeof f;
+}
+console.log(x);//1undefined
+
+//
+以下表达式的结果为true（）A C D
+undefined == null  undefined === null isNaN("100") parseInt("1a") == 1
+function myIsNaN(num) {
+    var ret = Number(num);
+    ret += "";
+    if(ret == "NaN") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+123 == 123;//true
+{} == {};//false
+
+
+//this
+1.函数预编译过程中 this --> window
+2.全局作用域里 this --> window
+3.call/apply可以改变函数运行时this指向
+4.obj.func();func()里面的this指向obj
+
+//
+var name = "222";
+var a = {
+    name : "111",
+    say : function () {
+        console.log(this.name);
+    }
+}
+var fun = a.say;
+fun();//222
+a.say();//111
+
+var b = {
+    name : "333",
+    say : function (fun) {
+        fun();//222
+    }
+}
+b.say(a.say);//333
+b.say = a.say;
+b.say();//333
+
+
+//
+function test() {
+    console.log(arguments.callee);//
+}
+test();//test
+
+
+//
+var num = (function (n) {
+    if(n == 1){
+        return 1;
+    }
+    //return n*阶乘（n-1）；
+    return n * arguments.callee(n - 1);
+}(100))
+
+//
+function test() {
+    console.log(arguments.callee);
+    function demo() {
+        console.log(arguments.callee);
+    }
+    demo();
+}
+test();
